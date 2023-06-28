@@ -1,111 +1,306 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html>
 
 <head>
-    <title>Portfolio Generator</title>
-    <link rel="stylesheet" type="text/css" href="static/css/style.css">
-    <link rel="stylesheet" type="text/css" href="static/css/w3.css">
-    <script src="script.js"></script>
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <title>Portfolio Website Generator</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="static/css/main.css" />
+    <link rel="stylesheet" href="static/css/w3.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+
+    <meta name="description" content="Easy solution to make your own portfolio website">
+    <meta name="keywords" content="website builder, portfolio websitr">
+
 </head>
 
 <body>
-    <h1>Portfolio Generator</h1>
-    <form class='w3-container w3-card' id="portfolioForm" action="/generate" method="post">
-        <h3> Personal Information</h3>
-        <p> 
-            <label for="name">Name:</label>
-            <input class='w3-input w3-border' type="text" id="name" name="name" required> 
-        </p>
-        <div class= "w3-row">
-            <div class= "w3-half">
-                <p> 
-                    <label for="name">Phone Number:</label>
-                    <input class='w3-input w3-border' type="text" id="number" name="number" required> 
-                </p>
+
+    <!-- Banner -->
+    <section id='home' class="banner full">
+        <article>
+            <img src="static/images/green-discs.jpg" alt="" />
+            <div class="inner">
+                <header>
+                    <p>Get Your Own Portfolio Website today</p>
+                    <div id="container">
+                        <div id="head_text">Welcome to </div>
+                        <div id="text">DesignFolio</div>
+                    </div>
+                </header>
+
+                <section id="section07" class="demo">
+                    <a href="#form"><span></span><span></span><span></span></a>
+                </section>
+            </div>
+        </article>
+    </section>
+
+    <!-- One -->
+    <a id="form">
+        <section class="wrapper style2" style="background-color: #13221f;">
+            <div class="inner">
+                <div class="content">
+                    <header class="align-center">
+                        <p style="text-transform: uppercase;
+                        color: #ffffff;
+	                   font-size: 1rem;
+	                   font-weight: 300;
+	                   margin: 0 0 .25rem 0;
+	                   padding: 0 0 .75rem 0;
+	                   letter-spacing: .25rem;">
+                            FILL IT with your information </p>
+
+                        <h2 style="text-transform: uppercase">Input Form</h2>
+                    </header>
+
+                    <div class="w3-row-padding" style="padding: 0 10%;">
+                        <form class='w3-container w3-card w3-white w3-padding-large' id="portfolioForm"
+                            action="/generate" method="post">
+                            <h3> Personal Information</h3>
+                            <p class="field" style="padding-inline: 5px;">
+                                <label for="name">Name:</label>
+                                <input class='w3-input  w3-border' type="text" id="name" name="name" required>
+                            </p>
+                            <div class="w3-row">
+                                <div class="w3-half">
+                                    <p class="field" style="padding-inline: 5px;">
+                                        <label for="name">Phone Number:</label>
+                                        <input class='w3-input  w3-border' type="text" id="number" name="number"
+                                            required>
+                                    </p>
+                                </div>
+
+                                <div class="w3-half">
+                                    <p class="field" style="padding-inline: 5px;">
+                                        <label for="email">Email Address:</label>
+                                        <input class='w3-input  w3-border' type="text" id="email" name="email" required>
+                                    </p>
+                                </div>
+                            </div>
+                            <hr>
+
+                            <h3>Education Information</h3>
+
+                            <div class="w3-row">
+                                <div class="w3-half">
+                                    <p class="field" style="padding-inline: 5px;">
+                                        <label for="degree">Degree:</label>
+                                        <input class='w3-input  w3-border' type="text" id="degree" name="degree"
+                                            required>
+                                    </p>
+                                </div>
+
+                                <div class="w3-half">
+                                    <p class="field" style="padding-inline: 5px;">
+                                        <label for="major">Major:</label>
+                                        <input class='w3-input  w3-border' type="text" id="major" name="major" required>
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="w3-row">
+                                <div class="w3-half">
+                                    <p class="field" style="padding-inline: 5px;">
+                                        <label for="school-start">Start Year:</label>
+                                        <input class='w3-input  w3-border' type="text" id="school-start"
+                                            name="school-start" required>
+                                    </p>
+                                </div>
+
+                                <div class="w3-half">
+                                    <p class="field" style="padding-inline: 5px;">
+                                        <label for="school-end">Graduating Year:</label>
+                                        <input class='w3-input  w3-border' type="text" id="school-end" name="school-end"
+                                            required>
+                                    </p>
+                                </div>
+                            </div>
+
+                            <p class="field" style="padding-inline: 5px;">
+                                <label for="university">University Name:</label>
+                                <input class='w3-input  w3-border' type="text" id="university" name="university"
+                                    required>
+                            </p>
+
+                            <hr>
+
+                            <h3>Work Experience</h3>
+
+                            <div class="w3-row">
+                                <div class="w3-half">
+                                    <p class="field" style="padding-inline: 5px;">
+                                        <label for="title1">Job Title:</label>
+                                        <input class='w3-input  w3-border' type="text" id="title1" name="title1"
+                                            required>
+                                    </p>
+                                </div>
+
+                                <div class="w3-half">
+                                    <p class="field" style="padding-inline: 5px;">
+                                        <label for="name-location1">Company Name & Location:</label>
+                                        <input class='w3-input  w3-border' type="text" id="name-location1" name="name-location1" required>
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="w3-row">
+                                <div class="w3-half">
+                                    <p class="field" style="padding-inline: 5px;">
+                                        <label for="work-start1">Start Month & Year:</label>
+                                        <input class='w3-input  w3-border' type="text" id="work-start1"
+                                            name="work-start1" required>
+                                    </p>
+                                </div>
+
+                                <div class="w3-half">
+                                    <p class="field" style="padding-inline: 5px;">
+                                        <label for="work-end1">End Month & Year:</label>
+                                        <input class='w3-input  w3-border' type="text" id="work-end1" name="work-end1"
+                                            required>
+                                    </p>
+                                </div>
+                            </div>
+
+                            <p class="field" style="padding-inline: 5px;"> <label for="work-description1">Job
+                                    Description:</label>
+                                <textarea class='w3-input  w3-border' id="work-description1" name="work-description1"
+                                    rows="4"></textarea>
+                            </p>
+
+                            <div class="w3-row">
+                                <div class="w3-half">
+                                    <p class="field" style="padding-inline: 5px;">
+                                        <label for="title2">Job Title:</label>
+                                        <input class='w3-input  w3-border' type="text" id="title2" name="title2" required>
+                                    </p>
+                                </div>
+
+                                <div class="w3-half">
+                                    <p class="field" style="padding-inline: 5px;">
+                                        <label for="name-location2">Company Name & Location:</label>
+                                        <input class='w3-input  w3-border' type="text" id="name-location2" name="name-location2" required>
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="w3-row">
+                                <div class="w3-half">
+                                    <p class="field" style="padding-inline: 5px;">
+                                        <label for="work-start2">Start Month & Year:</label>
+                                        <input class='w3-input  w3-border' type="text" id="work-start2" name="work-start2" required>
+                                    </p>
+                                </div>
+
+                                <div class="w3-half">
+                                    <p class="field" style="padding-inline: 5px;">
+                                        <label for="work-end2">End Month & Year:</label>
+                                        <input class='w3-input  w3-border' type="text" id="work-end2" name="work-end2"
+                                            required>
+                                    </p>
+                                </div>
+                            </div>
+
+                            <p class="field" style="padding-inline: 5px;"> <label for="work-description2">Job
+                                    Description:</label>
+                                <textarea class='w3-input  w3-border' id="work-description2" name="work-description2"
+                                    rows="4"></textarea>
+                            </p>
+
+                            <div class="w3-row">
+                                <div class="w3-half">
+                                    <p class="field" style="padding-inline: 5px;">
+                                        <label for="title3">Job Title:</label>
+                                        <input class='w3-input  w3-border' type="text" id="title3" name="title3"
+                                            required>
+                                    </p>
+                                </div>
+
+                                <div class="w3-half">
+                                    <p class="field" style="padding-inline: 5px;">
+                                        <label for="name-location3">Company Name & Location:</label>
+                                        <input class='w3-input  w3-border' type="text" id="name-location3" name="name-location3" required>
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="w3-row">
+                                <div class="w3-half">
+                                    <p class="field" style="padding-inline: 5px;">
+                                        <label for="work-start3">Start Month & Year:</label>
+                                        <input class='w3-input  w3-border' type="text" id="work-start3"
+                                            name="work-start3" required>
+                                    </p>
+                                </div>
+
+                                <div class="w3-half">
+                                    <p class="field" style="padding-inline: 5px;">
+                                        <label for="work-end3">End Month & Year:</label>
+                                        <input class='w3-input  w3-border' type="text" id="work-end3" name="work-end3"
+                                            required>
+                                    </p>
+                                </div>
+                            </div>
+
+                            <p class="field" style="padding-inline: 5px;"> <label for="work-description3">Job
+                                    Description:</label>
+                                <textarea class='w3-input  w3-border' id="work-description3" name="work-description3"
+                                    rows="4"></textarea>
+                            </p>
+
+                            <p class="field" style="padding-inline: 5px;">
+                                <input class='w3-input w3-round-xlarge' style="background-color: #27685b;" type="submit"
+                                    value="Generate Portfolio">
+                            </p>
+
+                        </form>
+                    </div>
+
+
+                </div>
             </div>
 
-            <div class= "w3-half">
-                <p> 
-                    <label for="email">Email Address:</label>
-                    <input class='w3-input w3-border' type="text" id="email" name="email" required> 
-                </p>
+            <div id="popup" class="w3-modal w3-animate-opaque" style="display: none; text-align: center;">
+                <div class="w3-modal-content w3-card-4">
+                    <header class="w3-container">
+                        <p>Congratulations! Your website has been generated.</p>
+                        <span onclick="document.getElementById('popup').style.display='none'"
+                            class="w3-button w3-large w3-display-topright">
+                            &times;
+                        </span>
+                    </header>
+                    <footer id="modal-footer" class="w3-container w3-padding-small">
+                        <p>
+                            <a href="portfolio.html" class="w3-btn w3-border w3-light-grey" target="_blank">Preview</a>
+                            <a href="portfolio.html" class="w3-btn w3-border w3-light-grey" target="_blank">Download
+                                Files</a>
+                        </p>
+                    </footer>
+                </div>
             </div>
+            </div>
+        </section>
+    </a>
+
+    <footer id="footer">
+        <div class="inner">
+            <div class="copyright"> ©Kartikey H. Pandey. All rights reserved 2023</div>
         </div>
-        <hr>
+    </footer>
 
-        <h3>Education Information</h3>
 
-        <div class= "w3-row">
-            <div class= "w3-half">
-                <p> 
-                    <label for="degree">Degree:</label>
-                    <input class='w3-input w3-border' type="text" id="degree" name="degree" required> 
-                </p>
-            </div>
-
-            <div class= "w3-half">
-                <p> 
-                    <label for="major">Major:</label>
-                    <input class='w3-input w3-border' type="text" id="major" name="major" required> 
-                </p>
-            </div>
-        </div>
-
-        <div class= "w3-row">
-            <div class= "w3-half">
-                <p> 
-                    <label for="school-start">Start Year:</label>
-                    <input class='w3-input w3-border' type="text" id="school-start" name="school-start" required> 
-                </p>
-            </div>
-
-            <div class= "w3-half">               
-                <p> 
-                    <label for="school-end">Graduating Year:</label>
-                    <input class='w3-input w3-border' type="text" id="school-end" name="school-end" required> 
-                </p>
-            </div>
-        </div>
-
-        <p> 
-            <label for="university">University Name:</label>
-            <input class='w3-input w3-border' type="text" id="university" name="university" required> 
-        </p>        
-       
-        <hr>
-
-        <h3>Work Experience</h3>
-
-        <p> <label for="experience">Job Description:</label>
-            <textarea id="experience" name="experience" rows="4"></textarea>
-        </p>
-
-        <p>
-            <input class='w3-input' type="submit" value="Generate Portfolio">
-        </p>
-
-    </form>
-
-    <div id="output"></div>
-
-    <div id="popup" class="w3-modal w3-animate-opaque" style="display: none; text-align: center;">
-        <div class="w3-modal-content w3-card-4">
-            <header class="w3-container">
-                <p>Congratulations! Your website has been generated.</p>
-                <span onclick="document.getElementById('popup').style.display='none'"
-                    class="w3-button w3-large w3-display-topright">
-                    &times;
-                </span>
-            </header>
-            <footer id="modal-footer" class="w3-container w3-padding-small">
-                <p>
-                    <a href="portfolio.html" class="w3-btn w3-border w3-light-grey" target="_blank">Preview</a>
-                    <a href="portfolio.html" class="w3-btn w3-border w3-light-grey" target="_blank">Download Files</a>
-                </p>
-            </footer>
-        </div>
-    </div>
-
+    <!-- Scripts -->
+    <script src="static/js/jquery.min.js"></script>
+    <script src="static/js/jquery.scrollex.min.js"></script>
+    <script src="static/js/skel.min.js"></script>
+    <script src="static/js/util.js"></script>
+    <script src="static/js/main.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
     <script>
         document.getElementById('portfolioForm').addEventListener('submit', function (e) {
             e.preventDefault();
@@ -117,13 +312,13 @@
             xhr.onreadystatechange = function () {
                 if (xhr.readyState === 4 && xhr.status === 200) {
                     document.getElementById('popup').style.display = 'block';
-                    
-
                 }
             };
             xhr.send(new FormData(form));
         });
     </script>
+
+
 </body>
 
 </html>

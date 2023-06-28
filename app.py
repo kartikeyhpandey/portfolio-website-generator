@@ -21,7 +21,21 @@ def generate():
     university = request.form['university']
     school_start = request.form['school-start']
     school_end = request.form['school-end']
-    experience = request.form['experience']
+    title1 = request.form['title1']
+    location1 = request.form['location1']
+    work_start1 = request.form['work-start1']
+    work_end1 = request.form['work-end1']
+    work_description1 = request.form['work-description1']
+    title2 = request.form['title2']
+    location2 = request.form['location2']
+    work_start2 = request.form['work-start2']
+    work_end2 = request.form['work-end2']
+    work_description2 = request.form['work-description2']
+    title3 = request.form['title3']
+    location3 = request.form['location3']
+    work_start3 = request.form['work-start3']
+    work_end3 = request.form['work-end3']
+    work_description3 = request.form['work-description3']
     
     # Generate the HTML content for the portfolio
     rendered_content = render_template('portfolio-template.html', 
@@ -33,7 +47,21 @@ def generate():
                                    university=university,
                                    school_start=school_start,
                                    school_end=school_end,
-                                   experience=experience)
+                                   title1=title1,
+                                   location1=location1,
+                                   work_start1=work_start1,
+                                   work_end1=work_end1,
+                                   work_description1=work_description1,
+                                   title2=title2,
+                                   location2=location2,
+                                   work_start2=work_start2,
+                                   work_end2=work_end2,
+                                   work_description2=work_description2,
+                                   title3=title3,
+                                   location3=location3,
+                                   work_start3=work_start3,
+                                   work_end3=work_end3,
+                                   work_description3=work_description3)
 
     
     
