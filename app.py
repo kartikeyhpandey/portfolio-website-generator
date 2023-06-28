@@ -21,8 +21,6 @@ def generate():
     university = request.form['university']
     school_start = request.form['school-start']
     school_end = request.form['school-end']
-    coursework = request.form['coursework']
-    club_activities = request.form['club-activities']
     experience = request.form['experience']
     
     # Generate the HTML content for the portfolio
@@ -35,8 +33,6 @@ def generate():
                                    university=university,
                                    school_start=school_start,
                                    school_end=school_end,
-                                   coursework=coursework,
-                                   club_activities=club_activities,
                                    experience=experience)
 
     
