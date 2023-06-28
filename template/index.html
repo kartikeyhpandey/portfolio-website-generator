@@ -4,50 +4,107 @@
 <head>
     <title>Portfolio Generator</title>
     <link rel="stylesheet" type="text/css" href="static/css/style.css">
+    <link rel="stylesheet" type="text/css" href="static/css/w3.css">
     <script src="script.js"></script>
 </head>
 
 <body>
     <h1>Portfolio Generator</h1>
-    <form id="portfolioForm" action="/generate" method="post">
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required>
+    <form class='w3-container w3-card' id="portfolioForm" action="/generate" method="post">
+        <h3> Personal Information</h3>
+        <p> 
+            <label for="name">Name:</label>
+            <input class='w3-input w3-border' type="text" id="name" name="name" required> 
+        </p>
+        <div class= "w3-row">
+            <div class= "w3-half">
+                <p> 
+                    <label for="name">Phone Number:</label>
+                    <input class='w3-input w3-border' type="text" id="number" name="number" required> 
+                </p>
+            </div>
 
-        <label for="name">Phone Number:</label>
-        <input type="text" id="number" name="number" required>
+            <div class= "w3-half">
+                <p> 
+                    <label for="email">Email Address:</label>
+                    <input class='w3-input w3-border' type="text" id="email" name="email" required> 
+                </p>
+            </div>
+        </div>
+        <hr>
 
-        <label for="email">Email Address:</label>
-        <input type="text" id="email" name="email" required>
+        <h3>Education Information</h3>
 
-        <label for="degree">Degree information:</label>
-        <input type="text" id="degree" name="degree" required>
+        <div class= "w3-row">
+            <div class= "w3-half">
+                <p> 
+                    <label for="degree">Degree:</label>
+                    <input class='w3-input w3-border' type="text" id="degree" name="degree" required> 
+                </p>
+            </div>
 
-        <label for="major">Major:</label>
-        <input type="text" id="major" name="major" required>
+            <div class= "w3-half">
+                <p> 
+                    <label for="major">Major:</label>
+                    <input class='w3-input w3-border' type="text" id="major" name="major" required> 
+                </p>
+            </div>
+        </div>
 
-        <label for="university">University Name:</label>
-        <input type="text" id="university" name="university" required>
+        <div class= "w3-row">
+            <div class= "w3-half">
+                <p> 
+                    <label for="school-start">Start Year:</label>
+                    <input class='w3-input w3-border' type="text" id="school-start" name="school-start" required> 
+                </p>
+            </div>
 
-        <label for="school-start">Start Year:</label>
-        <input type="text" id="school-start" name="school-start" required>
+            <div class= "w3-half">               
+                <p> 
+                    <label for="school-end">Graduating Year:</label>
+                    <input class='w3-input w3-border' type="text" id="school-end" name="school-end" required> 
+                </p>
+            </div>
+        </div>
 
-        <label for="school-end">Graduating Year:</label>
-        <input type="text" id="school-end" name="school-end" required>
+        <p> 
+            <label for="university">University Name:</label>
+            <input class='w3-input w3-border' type="text" id="university" name="university" required> 
+        </p>        
+       
+        <hr>
 
-        <label for="coursework">Relevant coursework:</label>
-        <textarea id="coursework" name="coursework" rows="4" required></textarea>
+        <h3>Work Experience</h3>
 
-        <label for="club-activities">Club Activities:</label>
-        <textarea id="club-activities" name="club-activities" rows="4" required></textarea>
+        <p> <label for="experience">Job Description:</label>
+            <textarea id="experience" name="experience" rows="4"></textarea>
+        </p>
 
+        <p>
+            <input class='w3-input' type="submit" value="Generate Portfolio">
+        </p>
 
-        <label for="experience">Work Experience:</label>
-        <textarea id="experience" name="experience" rows="4" required></textarea>
-
-        <input type="submit" value="Generate Portfolio">
     </form>
 
     <div id="output"></div>
+
+    <div id="popup" class="w3-modal w3-animate-opaque" style="display: none; text-align: center;">
+        <div class="w3-modal-content w3-card-4">
+            <header class="w3-container">
+                <p>Congratulations! Your website has been generated.</p>
+                <span onclick="document.getElementById('popup').style.display='none'"
+                    class="w3-button w3-large w3-display-topright">
+                    &times;
+                </span>
+            </header>
+            <footer id="modal-footer" class="w3-container w3-padding-small">
+                <p>
+                    <a href="portfolio.html" class="w3-btn w3-border w3-light-grey" target="_blank">Preview</a>
+                    <a href="portfolio.html" class="w3-btn w3-border w3-light-grey" target="_blank">Download Files</a>
+                </p>
+            </footer>
+        </div>
+    </div>
 
     <script>
         document.getElementById('portfolioForm').addEventListener('submit', function (e) {
@@ -59,9 +116,9 @@
             xhr.open(form.method, form.action, true);
             xhr.onreadystatechange = function () {
                 if (xhr.readyState === 4 && xhr.status === 200) {
-                    var file_path = xhr.responseText;
-                    var outputDiv = document.getElementById('output');
-                    outputDiv.innerHTML = '<a href="portfolio.html" target="_blank">Download Portfolio</a>';
+                    document.getElementById('popup').style.display = 'block';
+                    
+
                 }
             };
             xhr.send(new FormData(form));
