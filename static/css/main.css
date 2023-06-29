@@ -2,6 +2,79 @@
 @import url(font-awesome.min.css);
 @import url("https://fonts.googleapis.com/css?family=Raleway:200,300,400,500,600");
 
+input[type="range"] { 
+    margin: auto;
+    -webkit-appearance: none;
+    position: relative;
+    overflow: hidden;
+    height: 2.75rem;
+    cursor: pointer;
+    border-radius: 0; /* iOS */
+}
+
+::-webkit-slider-runnable-track {
+    background: #ddd;
+}
+
+/*
+ * 1. Set to 0 width and remove border for a slider without a thumb
+ * 2. Shadow is negative the full width of the input and has a spread 
+ *    of the width of the input.
+ */
+::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 20px; /* 1 */
+    height: 40px;
+    background: #195b4e;
+    box-shadow: -200px 0 0 200px #c3bd80; /* 2 */
+    border: 2px solid #195b4e; /* 1 */
+}
+
+::-moz-range-track {
+    height: 40px;
+    background: #ddd;
+}
+
+::-moz-range-thumb {
+    background: #195b4e;
+    height: 40px;
+    width: 20px;
+    border: 3px solid #195b4e;
+    border-radius: 0 !important;
+    box-shadow: -200px 0 0 200px #195b4e;
+    box-sizing: border-box;
+}
+
+::-ms-fill-lower { 
+    background: #195b4e;
+}
+
+::-ms-thumb { 
+    background: #195b4e;
+    border: 2px solid #195b4e;
+    height: 40px;
+    width: 20px;
+    box-sizing: border-box;
+}
+
+::-ms-ticks-after { 
+    display: none; 
+}
+
+::-ms-ticks-before { 
+    display: none; 
+}
+
+::-ms-track { 
+    background: #ddd;
+    color: transparent;
+    height: 40px;
+    border: none;
+}
+
+::-ms-tooltip { 
+    display: none;
+}
 
 @media only screen and (max-width: 1280px) {
     #section07 {
@@ -114,7 +187,7 @@
 }
 
 .nav ul li a:hover {
-    color: #ce1b28;
+    color: #c3bd80;
 
    
 }
@@ -424,7 +497,7 @@
     font-size: 62px;
     display: inline-block;
     vertical-align: middle;
-    color: #e31837;
+    color: #c3bd80;
     letter-spacing: 2px;
 }
 
@@ -5642,7 +5715,7 @@ body.is-mobile .banner > article {
 
 #container1 {
     float: left;
-    background: #e31818;
+    background: #c3bd80;
     display: block;
     width: 50%;
     height: 300px;

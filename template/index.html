@@ -2,8 +2,8 @@
 <html>
 
 <head>
-    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
-    <title>Portfolio Website Generator</title>
+    <link rel="shortcut icon" type="image/x-icon" href="/static/images/main/favicon.ico">
+    <title>DesignFolio - Portfolio Designer</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="static/css/main.css" />
@@ -12,11 +12,24 @@
 
 
     <meta name="description" content="Easy solution to make your own portfolio website">
-    <meta name="keywords" content="website builder, portfolio websitr">
+    <meta name="keywords" content="website builder, portfolio website">
 
 </head>
 
 <body>
+
+    <header id="header" class="alt">
+        <div class="logo"><a href="index.html"><img style="max-height:40px; vertical-align:middle"
+                    src="static/images/logo.png"></a></div>
+        <div class="nav">
+            <ul>
+                <li><a href='#home'>Home</a></li>
+                <li><a href='#form'>Design Form</a></li>                
+            </ul>
+        </div>
+
+
+    </header>
 
     <!-- Banner -->
     <section id='home' class="banner full">
@@ -24,10 +37,10 @@
             <img src="static/images/green-discs.jpg" alt="" />
             <div class="inner">
                 <header>
-                    <p>Get Your Own Portfolio Website today</p>
+                    <p>Get Your Own Portfolio Website in minutes</p>
                     <div id="container">
                         <div id="head_text">Welcome to </div>
-                        <div id="text">DesignFolio</div>
+                        <div id="text"> DesignFolio</div>
                     </div>
                 </header>
 
@@ -59,7 +72,8 @@
                     <div class="w3-row-padding" style="padding: 0 10%;">
                         <form class='w3-container w3-card w3-white w3-padding-large' id="portfolioForm"
                             action="/generate" method="post">
-                            <h3> Personal Information</h3>
+                            <h3><i class="fa fa-user fa-fw w3-margin-right w3-xlarge w3-text-black"></i>Personal Information</h3>
+                            <p>Enter personal information like name, email, resume, etc. </p>
                             <p class="field" style="padding-inline: 5px;">
                                 <label for="name">Name:</label>
                                 <input class='w3-input  w3-border' type="text" id="name" name="name" required>
@@ -79,10 +93,33 @@
                                         <input class='w3-input  w3-border' type="text" id="email" name="email" required>
                                     </p>
                                 </div>
+
+                                <div class="w3-half">
+                                    <p class="field" style="padding-inline: 5px;">
+                                        <label for="resume">Headshot Image:</label>
+                                        <input type="file" class='w3-input  w3-border' id="headsshot" name="headshot" style="background-color: #ececec;" />
+                                    </p>
+                                </div>
+                                
+                                <div class="w3-half">
+                                    <p class="field" style="padding-inline: 5px;">
+                                        <label for="resume">Resume:</label>
+                                        <input type="file" class='w3-input  w3-border' id="resume" name="resume" style="background-color: #ececec;" />
+                                    </p>
+                                </div>
                             </div>
+                            
+
+                            <p class="field" style="padding-inline: 5px;"> 
+                                <label for="summary">Summary:</label>
+                                <textarea class='w3-input  w3-border' id="summary" name="summary"
+                                    rows="4"></textarea>
+                            </p>
+
                             <hr>
 
-                            <h3>Education Information</h3>
+                            <h3><i class="fa fa-university fa-fw w3-margin-right w3-xlarge w3-text-black"></i>Education</h3>
+                            <p>Enter information about your most recent education.</p>
 
                             <div class="w3-row">
                                 <div class="w3-half">
@@ -125,9 +162,113 @@
                                     required>
                             </p>
 
+                            <p class="field" style="padding-inline: 5px;"> 
+                                <label for="school-misc">Miscellaneous Information:</label>
+                                <textarea class='w3-input  w3-border' id="school-misc" name="school-misc"
+                                    rows="4"></textarea>
+                            </p>
+
+
+
+                            <hr>
+                            <h3><i class="fa fa-cogs fa-fw w3-margin-right w3-xlarge w3-text-black"></i>Skills</h3>
+                            <p>Enter information about your 6 most relevant technical skills.</p>
+                            <div class="w3-row">
+                                <div class="w3-quarter">
+                                    <p class="field" style="padding-inline: 5px;">
+                                        <label for="skill1">Skill Name:</label>
+                                        <input class='w3-input  w3-border' type="text" id="skill1" name="skill1"
+                                            required>
+                                    </p>
+                                </div>
+
+                                <div class="w3-quarter">
+                                    <p class="field" style="padding-inline: 5px;">
+                                        <label for="skill1-prof">Proficiency:</label>
+                                        <input type="range" min="1" max="100" value="50" class="w3-input w3-border" id="skill1-prof" name="skill1-prof" required style="background-color: #ececec;" required>                                      
+                                    </p>
+                                </div>
+
+                                <div class="w3-quarter">
+                                    <p class="field" style="padding-inline: 5px;">
+                                        <label for="skill2">Skill Name:</label>
+                                        <input class='w3-input  w3-border' type="text" id="skill2" name="skill2"
+                                            required>
+                                    </p>
+                                </div>
+
+                                <div class="w3-quarter">
+                                    <p class="field" style="padding-inline: 5px;">
+                                        <label for="skill2-prof">Proficiency:</label>
+                                        <input type="range" min="1" max="100" value="50" class="w3-input w3-border slider" id="skill2-prof" name="skill2-prof" required style="background-color: #ececec;" required>
+                                    </p>
+                                </div>
+
+                                <div class="w3-quarter">
+                                    <p class="field" style="padding-inline: 5px;">
+                                        <label for="skill3">Skill Name:</label>
+                                        <input class='w3-input  w3-border' type="text" id="skill3" name="skill3"
+                                            required>
+                                    </p>
+                                </div>
+
+                                <div class="w3-quarter">
+                                    <p class="field" style="padding-inline: 5px;">
+                                        <label for="skill3-prof">Proficiency:</label>
+                                        <input type="range" min="1" max="100" value="50" class="w3-input w3-border slider" id="skill3-prof" name="skill3-prof" required style="background-color: #ececec;" required>
+                                    </p>
+                                </div>
+
+                                <div class="w3-quarter">
+                                    <p class="field" style="padding-inline: 5px;">
+                                        <label for="skill4">Skill Name:</label>
+                                        <input class='w3-input  w3-border' type="text" id="skill4" name="skill4"
+                                            required>
+                                    </p>
+                                </div>
+
+                                <div class="w3-quarter">
+                                    <p class="field" style="padding-inline: 5px;">
+                                        <label for="skill4-prof">Proficiency:</label>
+                                        <input type="range" min="1" max="100" value="50" class="w3-input w3-border slider" id="skill4-prof" name="skill4-prof" required style="background-color: #ececec;" required>
+                                    </p>
+                                </div>
+
+                                <div class="w3-quarter">
+                                    <p class="field" style="padding-inline: 5px;">
+                                        <label for="skill5">Skill Name:</label>
+                                        <input class='w3-input  w3-border' type="text" id="skill5" name="skill5"
+                                            required>
+                                    </p>
+                                </div>
+
+                                <div class="w3-quarter">
+                                    <p class="field" style="padding-inline: 5px;">
+                                        <label for="skill5-prof">Proficiency:</label>
+                                        <input type="range" min="1" max="100" value="50" class="w3-input w3-border slider" id="skill5-prof" name="skill5-prof" required style="background-color: #ececec;" required>
+                                    </p>
+                                </div>
+
+                                <div class="w3-quarter">
+                                    <p class="field" style="padding-inline: 5px;">
+                                        <label for="skill6">Skill Name:</label>
+                                        <input class='w3-input  w3-border' type="text" id="skill6" name="skill6"
+                                            required>
+                                    </p>
+                                </div>
+
+                                <div class="w3-quarter">
+                                    <p class="field" style="padding-inline: 5px;">
+                                        <label for="skill6-prof">Proficiency:</label>
+                                        <input type="range" min="1" max="100" value="50" class="w3-input w3-border slider" id="skill6-prof" name="skill6-prof" required style="background-color: #ececec;" required>
+                                    </p>
+                                </div>
+                            </div>
+
                             <hr>
 
-                            <h3>Work Experience</h3>
+                            <h3><i class="fa fa-briefcase fa-fw w3-margin-right w3-xlarge w3-text-black"></i>Work Experience</h3>
+                            <p>Enter information about your 3 most relevant work experience.</p>
 
                             <div class="w3-row">
                                 <div class="w3-half">
@@ -141,7 +282,8 @@
                                 <div class="w3-half">
                                     <p class="field" style="padding-inline: 5px;">
                                         <label for="name-location1">Company Name & Location:</label>
-                                        <input class='w3-input  w3-border' type="text" id="name-location1" name="name-location1" required>
+                                        <input class='w3-input  w3-border' type="text" id="name-location1"
+                                            name="name-location1" required>
                                     </p>
                                 </div>
                             </div>
@@ -170,18 +312,22 @@
                                     rows="4"></textarea>
                             </p>
 
+                            <hr>
+
                             <div class="w3-row">
                                 <div class="w3-half">
                                     <p class="field" style="padding-inline: 5px;">
                                         <label for="title2">Job Title:</label>
-                                        <input class='w3-input  w3-border' type="text" id="title2" name="title2" required>
+                                        <input class='w3-input  w3-border' type="text" id="title2" name="title2"
+                                            required>
                                     </p>
                                 </div>
 
                                 <div class="w3-half">
                                     <p class="field" style="padding-inline: 5px;">
                                         <label for="name-location2">Company Name & Location:</label>
-                                        <input class='w3-input  w3-border' type="text" id="name-location2" name="name-location2" required>
+                                        <input class='w3-input  w3-border' type="text" id="name-location2"
+                                            name="name-location2" required>
                                     </p>
                                 </div>
                             </div>
@@ -190,7 +336,8 @@
                                 <div class="w3-half">
                                     <p class="field" style="padding-inline: 5px;">
                                         <label for="work-start2">Start Month & Year:</label>
-                                        <input class='w3-input  w3-border' type="text" id="work-start2" name="work-start2" required>
+                                        <input class='w3-input  w3-border' type="text" id="work-start2"
+                                            name="work-start2" required>
                                     </p>
                                 </div>
 
@@ -209,6 +356,8 @@
                                     rows="4"></textarea>
                             </p>
 
+                            <hr>
+
                             <div class="w3-row">
                                 <div class="w3-half">
                                     <p class="field" style="padding-inline: 5px;">
@@ -221,7 +370,8 @@
                                 <div class="w3-half">
                                     <p class="field" style="padding-inline: 5px;">
                                         <label for="name-location3">Company Name & Location:</label>
-                                        <input class='w3-input  w3-border' type="text" id="name-location3" name="name-location3" required>
+                                        <input class='w3-input  w3-border' type="text" id="name-location3"
+                                            name="name-location3" required>
                                     </p>
                                 </div>
                             </div>
