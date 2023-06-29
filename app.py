@@ -1,3 +1,4 @@
+import zipfile
 from flask import Flask, render_template, send_file, request
 import os
 
@@ -10,6 +11,28 @@ def index():
 @app.route('/portfolio.html')
 def portfolio():
     return render_template('portfolio.html')
+
+@app.route('/download')
+def download():
+    zip_filename = 'website.zip'
+    with zipfile.ZipFile(zip_filename, 'w') as zipf:
+        static_folder = os.path.join(app.root_path, '/static')
+        for root, dirs, files in os.walk(static_folder):
+            print(files)
+            print(dirs)
+            for file in files:
+                file_path = os.path.join(root, file)
+                arcname = '/static/' + os.path.relpath(file_path, static_folder)
+                print(arcname)
+                zipf.write(file_path, arcname)
+
+         # Add the HTML file
+        zipf.write('template/portfolio.html', arcname='index.html')
+
+    # Send the zip file for download
+    return send_file(zip_filename, as_attachment=True)
+
+    
 
 @app.route('/generate', methods=['POST'])
 def generate():
@@ -99,9 +122,6 @@ def generate():
                                    work_start3=work_start3,
                                    work_end3=work_end3,
                                    work_description3=work_description3)
-
-
-    
     
     # Save the generated HTML content to a file
     file_path = os.path.join('template/portfolio.html')

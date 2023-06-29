@@ -20,7 +20,7 @@
         <div class="nav">
             <ul>
                 <li><a href='index.html'>Home</a></li>
-                <li><a href='#work-experience'>Work Experience</a></li>                
+                <li><a href='#work-experience'>Work Experience</a></li>
                 <li><a href='#projects'>Projects</a></li>
                 <li><a href='#awards'>Awards</a></li>
                 <li><a href="#menu" class="icon"><i class="fa fa-bars"></i></a></li>
@@ -34,16 +34,16 @@
     <nav id="menu">
         <ul class="links">
             <li><a href='#home'>Home</a></li>
-            <li><a href='#work-experience'>Work Experience</a></li>            
+            <li><a href='#work-experience'>Work Experience</a></li>
             <li><a href='#projects'>Projects</a></li>
-            <li><a href='#awards'>Awards</a></li>            
+            <li><a href='#awards'>Awards</a></li>
         </ul>
     </nav>
 
     <!-- Banner -->
     <section id='home' class="banner full">
         <article>
-            <img src="static/images/green-discs.jpg" alt="" />
+            <img src="static/images/portfolio/green-discs.jpg" alt="" />
             <div class="inner">
                 <header>
                     <p>Welcome to my portfolio</p>
@@ -59,146 +59,134 @@
 
     <!-- One -->
     <a id="About">
+        <section id="work-experience" class="banner half">
+            <article>
+                <div class="inner">
+                    <header>
 
-        <section id="bg" class="wrapper style2">
-            <div class="inner">
+                        <p>Education, Skills &amp; Contact</p>
+                        <h2><i class="fa fa-suitcase fa-fw w3-margin-right w3-xxxxxlarge w3-text-white"></i>About
+                        </h2>
 
-                <div class="content">
-                    <header class="align-center">
-                        <p style="text-transform: uppercase;
-                        color: #ffffff;
-	                   font-size: 1rem;
-	                   font-weight: 300;
-	                   margin: 0 0 .25rem 0;
-	                   padding: 0 0 .75rem 0;
-	                   letter-spacing: .25rem;">
-                            Education, Skills &amp; Contact</p>
-                        <h2 style="text-transform: uppercase">About</h2>
                     </header>
-                    <div class="w3-row-padding">
+                </div>
+            </article>
+        </section>
 
-                        <!-- Left Column -->
-                        <div class="w3-third">
-
-                            <div class="w3-white w3-text-grey w3-card-4">
-                                <div class="w3-display-container">
-                                    <img id="headshot-file" src="{{ url_for('static', filename=headshot.filename) }}" style="width:100%" alt="Photo">
-                                </div>
-                                <div class="w3-container">
-                                    <h3 class="w3-text-black w3-padding-12"><i
-                                            class="fa fa-user fa-fw w3-margin-right w3-xlarge w3-text-black"></i>Info
-                                    </h3>
-                                    <p><i
-                                            class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-black"></i>{{ email }}
-                                    </p>
-                                    <p><i
-                                            class="fa fa-phone fa-fw w3-margin-right w3-large w3-text-black"></i>{{ number }}
-                                    </p>
-                                    <p><i class="fa fa-file-text fa-fw w3-margin-right w3-large w3-text-black"></i>
-                                        <a id="resume-file" target="_blank" href="{{ url_for('static', filename=resume.filename) }}">Resume</a>
-
-
+        <section class="wrapper style2">
+            <div class="inner">
+                <div class="content">
+                    <div class="w3">
+                        <div class="w3-row-padding w3-white w3-text-grey" style="padding-top: 1%;">
+                            <div class="w3-third">
+                                <div class="w3-white w3-text-grey">
+                                    <div class="w3-display-container">
+                                        <img id="headshot-file"
+                                            src="{{ url_for('static', filename=headshot.filename) }}" style="width:100%"
+                                            alt="Photo">
+                                    </div>
+                                    <div class="w3-container">
+                                        <h3 class="w3-text-black w3-padding-12"><i
+                                                class="fa fa-user fa-fw w3-margin-right w3-xlarge w3-text-black"></i>Info
+                                        </h3>
+                                        <p><i
+                                                class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-black"></i>{{ email }}
+                                        </p>
+                                        <p><i
+                                                class="fa fa-phone fa-fw w3-margin-right w3-large w3-text-black"></i>{{ number }}
+                                        </p>
+                                        <p><i class="fa fa-file-text fa-fw w3-margin-right w3-large w3-text-black"></i>
+                                            <a id="resume-file" target="_blank"
+                                                href="{{ url_for('static', filename=resume.filename) }}">Resume</a>
+                                    </div>
                                 </div>
                             </div>
 
-                            <!-- End Left Column -->
-                        </div>
+                            <div class="w3-twothird">
+                                <div class="w3-container w3-white w3-margin-bottom">
 
-                        <!-- Right Column -->
-                        <div class="w3-twothird">
+                                    <h3 class="w3-text-black w3-padding-16"><i
+                                            class="fa fa-book fa-fw w3-margin-right w3-xlarge w3-text-black"></i>Summary
+                                    </h3>
+                                    <div class="w3-container">
+                                        <p>{{ summary }}</p>
 
-                            <div class="w3-container w3-card w3-white w3-margin-bottom">
-
-                                <h3 class="w3-text-black w3-padding-16"><i
-                                        class="fa fa-book fa-fw w3-margin-right w3-xlarge w3-text-black"></i>Summary
-                                </h3>
-                                <div class="w3-container">
-                                    <p>{{ summary }}</p>
+                                    </div>
+                                    <hr>
+                                    <h3 class="w3-text-black w3-padding-16"><i
+                                            class="fa fa-university fa-fw w3-margin-right w3-xlarge w3-text-black"></i>Education
+                                    </h3>
+                                    <div class="w3-container">
+                                        <h5 class="w3-opacity"><b>{{ degree }} in {{ major}} / {{ university }}</b></h5>
+                                        <h6 class="w3-text-black"><i
+                                                class="fa fa-calendar fa-fw w3-margin-right"></i>{{ school_start }} -
+                                            {{ school_end }}</h6>
+                                        <p>{{ school_misc }}</p>
+                                    </div>
 
                                 </div>
                                 <hr>
-                                <h3 class="w3-text-black w3-padding-16"><i
-                                    class="fa fa-university fa-fw w3-margin-right w3-xlarge w3-text-black"></i>Education
-                            </h3>
-                            <div class="w3-container">
-                                <h5 class="w3-opacity"><b>{{ degree }} in {{ major}} / {{ university }}</b></h5>
-                                <h6 class="w3-text-black"><i class="fa fa-calendar fa-fw w3-margin-right"></i>{{ school_start }} -
-                                    {{ school_end }}</h6>
-                                <p>{{ school_misc }}</p>
-                            </div>
-                            <hr>
-                            <h3 class="w3-text-black w3-padding-16"><i
-                                class="fa fa-cogs fa-fw w3-margin-right w3-xlarge w3-text-black"></i>Skills</h3>
-
-                        <div class="w3-row-padding">
-                            <div class="w3-third">
-                                <div class="w3-grey w3-round-xxlarge w3-small">
-                                    <div id="skill1" class="w3-container w3-center w3-round-xxlarge w3-black" style="width: 20%">
-                                        <p class="" style="font-size: 1rem ;margin: 0 0 0 0">{{ skill1 }}</p>
+                                <div class="w3-row-padding w3-white w3-text-grey ">
+                                    <h3 class="w3-text-black w3-padding-16"><i
+                                            class="fa fa-cogs fa-fw w3-margin-right w3-xlarge w3-text-black"></i>Skills
+                                    </h3>
+                                    <div class="w3-half">
+                                        <div class="w3-grey w3-round-xxlarge w3-small">
+                                            <div id="skill1" class="w3-container w3-center w3-round-xxlarge w3-black"
+                                                style="width: 20%">
+                                                <p class="" style="font-size: 1rem ;margin: 0 0 0 0">{{ skill1 }}</p>
+                                            </div>
+                                        </div>
+                                        <br>
+                                        <div class="w3-grey w3-round-xxlarge w3-small">
+                                            <div id="skill2" class="w3-container w3-center w3-round-xlarge w3-black"
+                                                style="width:95%">
+                                                <p class="" style="font-size: 1rem ;margin: 0 0 0 0"> {{ skill2 }}</p>
+                                            </div>
+                                        </div>
+                                        <br>
+                                        <div class="w3-grey w3-round-xlarge w3-small">
+                                            <div id="skill3" class="w3-container w3-center w3-round-xlarge w3-black"
+                                                style="width:95%">
+                                                <p class="" style="font-size: 1rem ;margin: 0 0 0 0">{{ skill3 }}</p>
+                                            </div>
+                                        </div>
+                                        <br>
                                     </div>
-                                </div>
+                                    <div class="w3-half">
+                                        <div class="w3-grey w3-round-xlarge w3-small">
+                                            <div id="skill4" class="w3-container w3-center w3-round-xlarge w3-black"
+                                                style="width:90%">
+                                                <p class="" style="font-size: 1rem ;margin: 0 0 0 0">{{ skill4 }}</p>
+                                            </div>
+                                        </div>
+                                        <br>
+                                        <div class="w3-grey w3-round-xlarge w3-small">
+                                            <div id="skill5" class="w3-container w3-center w3-round-xlarge w3-black"
+                                                style="width:90%">
+                                                <p class="" style="font-size: 1rem ;margin: 0 0 0 0">{{ skill5 }}</p>
+                                            </div>
+                                        </div>
 
-                                <br>
-                                <div class="w3-grey w3-round-xxlarge w3-small">
-                                    <div id="skill2" class="w3-container w3-center w3-round-xlarge w3-black" style="width:95%">
-                                        <p class="" style="font-size: 1rem ;margin: 0 0 0 0"> {{ skill2 }}</p>
+                                        <br>
+                                        <div class="w3-grey w3-round-xlarge w3-small">
+                                            <div id="skill6" class="w3-container w3-center w3-round-xlarge w3-black"
+                                                style="width:95%">
+                                                <p class="" style="font-size: 1rem ;margin: 0 0 0 0">{{ skill6 }}</p>
+                                            </div>
+                                        </div>
+
+                                        <br>
+
                                     </div>
+
                                 </div>
-
-                                <br>
-                            </div>
-                            <div class="w3-third">
-                                <div class="w3-grey w3-round-xlarge w3-small">
-                                    <div id="skill3" class="w3-container w3-center w3-round-xlarge w3-black" style="width:95%">
-                                        <p class="" style="font-size: 1rem ;margin: 0 0 0 0">{{ skill3 }}</p>
-                                    </div>
-                                </div>
-
-                                <br>
-                                <div class="w3-grey w3-round-xlarge w3-small">
-                                    <div id="skill4" class="w3-container w3-center w3-round-xlarge w3-black" style="width:90%">
-                                        <p class="" style="font-size: 1rem ;margin: 0 0 0 0">{{ skill4 }}</p>
-                                    </div>
-                                </div>
-
-                                <br>
-
-                            </div>
-                            <div class="w3-third">
-                                <div class="w3-grey w3-round-xlarge w3-small">
-                                    <div id="skill5" class="w3-container w3-center w3-round-xlarge w3-black" style="width:90%">
-                                        <p class="" style="font-size: 1rem ;margin: 0 0 0 0">{{ skill5 }}</p>
-                                    </div>
-                                </div>
-
-                                <br>
-                                <div class="w3-grey w3-round-xlarge w3-small">
-                                    <div id="skill6" class="w3-container w3-center w3-round-xlarge w3-black" style="width:95%">
-                                        <p class="" style="font-size: 1rem ;margin: 0 0 0 0">{{ skill6 }}</p>
-                                    </div>
-                                </div>
-
-                                <br>
-
                             </div>
                         </div>
-
-                            </div>                            
-
-
-                        </div>
-                        <br>
-                        <!-- End Right Column -->
-
-
-                        <!-- End Grid -->
                     </div>
-
+                    <!-- End Right Column -->
                 </div>
                 <br>
-                
-            </div>
-
             </div>
         </section>
     </a>
@@ -222,17 +210,16 @@
     <!-- Two -->
     <section class="wrapper style2">
         <div class="inner">
-
             <div class="content">
-
                 <div class="w3">
-
                     <div class="w3-container w3-card w3-white w3-margin-bottom">
                         <div data-aos="fade-up">
                             <div class="w3-container">
                                 <h5 class="w3-opacity"><b>{{ title1 }} / {{ name_location1 }}</b>
                                 </h5>
-                                <h6 class="w3-text-black"><i class="fa fa-calendar fa-fw w3-margin-right"></i>{{ work_start1 }} - {{ work_end1 }}</h6>
+                                <h6 class="w3-text-black"><i
+                                        class="fa fa-calendar fa-fw w3-margin-right"></i>{{ work_start1 }} -
+                                    {{ work_end1 }}</h6>
                                 <p>{{ work_description1 }}</p>
                                 <hr>
                             </div>
@@ -242,7 +229,9 @@
                             <div class="w3-container">
                                 <h5 class="w3-opacity"><b>{{ title2 }} / {{ name_location2 }}</b>
                                 </h5>
-                                <h6 class="w3-text-black"><i class="fa fa-calendar fa-fw w3-margin-right"></i>{{ work_start1 }} - {{ work_end1 }}</h6>
+                                <h6 class="w3-text-black"><i
+                                        class="fa fa-calendar fa-fw w3-margin-right"></i>{{ work_start1 }} -
+                                    {{ work_end1 }}</h6>
                                 <p>{{ work_description2 }}</p>
                                 <hr>
                             </div>
@@ -250,7 +239,9 @@
                         <div data-aos="fade-up">
                             <div class="w3-container">
                                 <h5 class="w3-opacity"><b>{{ title3 }} / {{ name_location3 }}</b></h5>
-                                <h6 class="w3-text-black"><i class="fa fa-calendar fa-fw w3-margin-right"></i>{{ work_start3 }} - {{ work_end3 }}</h6>
+                                <h6 class="w3-text-black"><i
+                                        class="fa fa-calendar fa-fw w3-margin-right"></i>{{ work_start3 }} -
+                                    {{ work_end3 }}</h6>
                                 <p>{{ work_description3 }}</p>
                                 <hr>
                             </div>
@@ -326,35 +317,35 @@
                                 <h5 class="w3-opcaity">UX &amp; UI Design</h5>
                                 <div class="w3-row w3-center">
                                     <div class="w3-col s2 w3-center">
-                                        <img src="static/images/Splash%20Screen.png" width=90%>
+                                        <img src="static/images/portfolio/Splash%20Screen.png" width=90%>
                                     </div>
                                     <div class="w3-col s2 w3-center">
-                                        <img src="static/images/WelcomeScreen.png" width=90%>
+                                        <img src="static/images/portfolio/WelcomeScreen.png" width=90%>
                                     </div>
                                     <div class="w3-col s2 w3-center">
-                                        <img src="static/images/Sign%20Up%20Screen.png" width=90%>
+                                        <img src="static/images/portfolio/Sign%20Up%20Screen.png" width=90%>
                                     </div>
                                     <div class="w3-col s2 w3-center">
-                                        <img src="static/images/Log%20In%20Screen.png" width=90%>
+                                        <img src="static/images/portfolio/Log%20In%20Screen.png" width=90%>
                                     </div>
 
                                     <div class="w3-col s2 w3-center">
-                                        <img src="static/images/Feed.png" width=90%>
+                                        <img src="static/images/portfolio/Feed.png" width=90%>
                                     </div>
                                     <div class="w3-col s2 w3-center">
-                                        <img src="static/images/Connections.png" width=90%>
-                                    </div>
-                                    <div class="w3-col s2 w3-center">
-                                        <br>
-                                        <img src="static/images/Browse.png" width=90%>
+                                        <img src="static/images/portfolio/Connections.png" width=90%>
                                     </div>
                                     <div class="w3-col s2 w3-center">
                                         <br>
-                                        <img src="static/images/Filters.png" width=90%>
+                                        <img src="static/images/portfolio/Browse.png" width=90%>
                                     </div>
                                     <div class="w3-col s2 w3-center">
                                         <br>
-                                        <img src="static/images/Profile.png" width=90%>
+                                        <img src="static/images/portfolio/Filters.png" width=90%>
+                                    </div>
+                                    <div class="w3-col s2 w3-center">
+                                        <br>
+                                        <img src="static/images/portfolio/Profile.png" width=90%>
                                     </div>
                                 </div>
                                 <hr>
@@ -391,10 +382,10 @@
                                 <h5 class="w3-opcaity">Satelite Overview &amp; Design</h5>
                                 <div class="w3-row w3-center">
                                     <div class="w3-col s6 w3-center">
-                                        <img src="static/images/sensor.png" width=100%>
+                                        <img src="static/images/portfolio/sensor.png" width=100%>
                                     </div>
                                     <div class="w3-col s6 w3-center">
-                                        <img src="static/images/3d-model.png" width=60%>
+                                        <img src="static/images/portfolio/3d-model.png" width=60%>
                                     </div>
                                 </div>
                                 <hr>
@@ -414,19 +405,19 @@
                                 <h5 class="w3-opcaity">UX &amp; UI Design</h5>
                                 <div class="w3-row w3-center">
                                     <div class="w3-col s6 w3-center">
-                                        <img src="static/images/home_screen.png" width="90%">
+                                        <img src="static/images/portfolio/home_screen.png" width="90%">
                                     </div>
                                     <div class="w3-col s6 w3-center">
-                                        <img src="static/images/org_struct.png" width="90%">
+                                        <img src="static/images/portfolio/org_struct.png" width="90%">
                                     </div>
                                 </div>
                                 <br>
                                 <div class="w3-row w3-center">
                                     <div class="w3-col s6 w3-center">
-                                        <img src="static/images/proj_highlights.png" width="90%">
+                                        <img src="static/images/portfolio/proj_highlights.png" width="90%">
                                     </div>
                                     <div class="w3-col s6 w3-center">
-                                        <img src="static/images/meet_team.png" width="90%">
+                                        <img src="static/images/portfolio/meet_team.png" width="90%">
                                     </div>
                                 </div>
                                 <hr>
@@ -446,16 +437,16 @@
                                 <h5 class="w3-opcaity">UX &amp; UI Design</h5>
                                 <div class="w3-row w3-center">
                                     <div class="w3-col s2 w3-center">
-                                        <img src="static/images/profile_home.jpg" width=90%>
+                                        <img src="static/images/portfolio/profile_home.jpg" width=90%>
                                     </div>
                                     <div class="w3-col s2 w3-center">
-                                        <img src="static/images/work_screen.jpg" width=90%>
+                                        <img src="static/images/portfolio/work_screen.jpg" width=90%>
                                     </div>
                                     <div class="w3-col s2 w3-center">
-                                        <img src="static/images/leaders_screen.jpg" width=90%>
+                                        <img src="static/images/portfolio/leaders_screen.jpg" width=90%>
                                     </div>
                                     <div class="w3-col s2 w3-center">
-                                        <img src="static/images/awards_screen.jpg" width=90%>
+                                        <img src="static/images/portfolio/awards_screen.jpg" width=90%>
                                     </div>
 
                                 </div>

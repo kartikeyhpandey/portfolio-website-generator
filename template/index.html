@@ -20,7 +20,7 @@
 
     <header id="header" class="alt">
         <div class="logo"><a href="index.html"><img style="max-height:40px; vertical-align:middle"
-                    src="static/images/logo.png"></a></div>
+                    src="static/images/main/logo.png"></a></div>
         <div class="nav">
             <ul>
                 <li><a href='#home'>Home</a></li>
@@ -34,7 +34,7 @@
     <!-- Banner -->
     <section id='home' class="banner full">
         <article>
-            <img src="static/images/green-discs.jpg" alt="" />
+            <img src="static/images/portfolio/green-discs.jpg" alt="" />
             <div class="inner">
                 <header>
                     <p>Get Your Own Portfolio Website in minutes</p>
@@ -97,14 +97,14 @@
                                 <div class="w3-half">
                                     <p class="field" style="padding-inline: 5px;">
                                         <label for="resume">Headshot Image:</label>
-                                        <input type="file" class='w3-input  w3-border' id="headsshot" name="headshot" style="background-color: #ececec;" />
+                                        <input type="file" class='w3-input  w3-border' id="headsshot" name="headshot" style="background-color: #ececec;" required/>
                                     </p>
                                 </div>
                                 
                                 <div class="w3-half">
                                     <p class="field" style="padding-inline: 5px;">
                                         <label for="resume">Resume:</label>
-                                        <input type="file" class='w3-input  w3-border' id="resume" name="resume" style="background-color: #ececec;" />
+                                        <input type="file" class='w3-input  w3-border' id="resume" name="resume" style="background-color: #ececec;" required />
                                     </p>
                                 </div>
                             </div>
@@ -413,20 +413,20 @@
             </div>
 
             <div id="popup" class="w3-modal w3-animate-opaque" style="display: none; text-align: center;">
-                <div class="w3-modal-content w3-card-4">
+                <div class="w3-modal-content w3-card-4 w3-padding-large">
                     <header class="w3-container">
-                        <p>Congratulations! Your website has been generated.</p>
+                        <p class="w3-text-black">Congratulations! Your website has been generated.</p>
                         <span onclick="document.getElementById('popup').style.display='none'"
-                            class="w3-button w3-large w3-display-topright">
+                            class="w3-button w3-display-topright">
                             &times;
                         </span>
                     </header>
                     <footer id="modal-footer" class="w3-container w3-padding-small">
-                        <p>
+                        
                             <a href="portfolio.html" class="w3-btn w3-border w3-light-grey" target="_blank">Preview</a>
-                            <a href="portfolio.html" class="w3-btn w3-border w3-light-grey" target="_blank">Download
-                                Files</a>
-                        </p>
+                            <a href="{{ url_for('download') }}" class="w3-btn w3-border w3-light-grey">Download Website</a>
+                            
+
                     </footer>
                 </div>
             </div>
@@ -465,10 +465,12 @@
                 }
             };
             xhr.send(new FormData(form));
+            $("#resume").val('');
+            $("#headshot").val('');
+
         });
     </script>
-
-
+    
 </body>
 
 </html>
