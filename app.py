@@ -36,12 +36,11 @@ def generate():
     if request.method == 'POST':
         config = request.form.to_dict()
         print(config)
-        for file_field in request.files:
-            file = request.files[file_field]
-            if file and allowed_file(file.filename):
-                filename = file.filename
-                file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-                config[file_field] = filename
+        file_names = [file.filename for file in request.files if file and allowed_file(file.filename)]
+        for file_name in file_names:
+            file = request.files[file_name]
+            file.save(os.path.join(app.config['UPLOAD_FOLDER'], file_name))
+            config[file_name] = file_name
 
     name = request.form['name']
     number = request.form['number']
