@@ -18,8 +18,6 @@ def download():
     with zipfile.ZipFile(zip_filename, 'w') as zipf:
         static_folder = os.path.join(app.root_path, '/static')
         for root, dirs, files in os.walk(static_folder):
-            print(files)
-            print(dirs)
             for file in files:
                 file_path = os.path.join(root, file)
                 arcname = '/static/' + os.path.relpath(file_path, static_folder)
