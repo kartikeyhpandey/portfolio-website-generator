@@ -2608,27 +2608,21 @@ hr {
 .box .content1 {
     height: 257px;
     padding: 3rem;
-    background-image: url(/static/images/work.jpg);
 }
 
 .box .content2 {
     height: 257px;
     padding: 3rem;
-    background-image: url(/static/images/leadership.jpg);
 }
 
 .box .content3 {
     height: 257px;
-
     padding: 3rem;
-    background-image: url(/static/images/honors.jpg);
 }
 
 .box .content4 {
     height: 257px;
-
     padding: 3rem;
-    background-image: url(/static/images/projects.jpg);
 }
 
 @media screen and (max-width: 1280px) {
@@ -3718,19 +3712,6 @@ table.alt tbody tr td {
     border-color: rgba(255, 255, 255, 0.25);
 }
 
-#two {
-    background-image: url(/static/images/matrix-3415878_1280.jpg);
-}
-
-#bg {
-    background-image: url(/static/images/campus-sunset.jpg);
-}
-
-#bg2 {
-    background-image: url(/static/images/skyline.jpg);
-    background-size: cover;
-}
-
 .wrapper.style2 {
     background-color: gainsboro;
     ;
@@ -3976,10 +3957,7 @@ table.alt tbody tr td {
 .wrapper.style3 {
     background-color: #fff;
     color: #bfbfbf;
-    background-image: url(../../static/images/riverfront-sunset-crop.jpg);
     background-size: cover;
-
-
     position: relative;
 }
 
@@ -4022,7 +4000,6 @@ table.alt tbody tr td {
 
 .wrapper.style3 .box {
     border-color: rgba(255, 255, 255, 0.5);
-    background-image: url(../../static/images/bg.jpg);
 }
 
 .wrapper.style3 input[type="submit"],
@@ -5003,7 +4980,6 @@ body.subpage {
     padding: 0;
     min-height: 40vh;
     height: 40vh !important;
-    background-image: url(/static/images/riverfront-sunset-crop.jpg);
     background-size: cover;
 }
 
@@ -5123,7 +5099,6 @@ body.subpage {
     transition: opacity 1.5s ease, visibility 1.5s;
     background-attachment: fixed;
     background-position: center;
-    background-repeat: no-repeat;
     background-size: cover;
     height: 100%;
     left: 0;

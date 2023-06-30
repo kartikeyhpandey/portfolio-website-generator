@@ -1,8 +1,14 @@
 import zipfile
-from flask import Flask, render_template, send_file, request
+from flask import Flask, render_template, send_file, request, make_response
 import os
 
-app=Flask(__name__,template_folder='template')
+app = Flask(__name__, template_folder='template')
+UPLOAD_FOLDER = os.path.join(app.root_path, 'static')
+app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+app.config['ALLOWED_EXTENSIONS'] = {'png', 'jpg', 'jpeg', 'gif', 'pdf'}
+
+def allowed_file(filename):
+    return '.' in filename and filename.rsplit('.', 1)[1].lower() in app.config['ALLOWED_EXTENSIONS']
 
 @app.route('/')
 def index():
@@ -16,29 +22,27 @@ def portfolio():
 def download():
     zip_filename = 'website.zip'
     with zipfile.ZipFile(zip_filename, 'w') as zipf:
-        static_folder = os.path.join(app.root_path, '/static')
-        for root, dirs, files in os.walk(static_folder):
+        for root, _, files in os.walk(app.config['UPLOAD_FOLDER']):
             for file in files:
                 file_path = os.path.join(root, file)
-                arcname = '/static/' + os.path.relpath(file_path, static_folder)
-                print(arcname)
+                arcname = os.path.relpath(file_path, app.config['UPLOAD_FOLDER'])
                 zipf.write(file_path, arcname)
-
-         # Add the HTML file
-        zipf.write('template/portfolio.html', arcname='index.html')
 
     # Send the zip file for download
     return send_file(zip_filename, as_attachment=True)
 
 @app.route('/generate', methods=['POST'])
 def generate():
-    if request.method == 'POST':  
-        resume = request.files['resume']
-        resume.save(os.path.join(app.root_path, 'static/' + resume.filename ))
+    if request.method == 'POST':
+        config = request.form.to_dict()
+        print(config)
+        for file_field in request.files:
+            file = request.files[file_field]
+            if file and allowed_file(file.filename):
+                filename = file.filename
+                file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+                config[file_field] = filename
 
-        headshot = request.files['headshot']
-        headshot.save(os.path.join(app.root_path, 'static/' + headshot.filename ))
-    
     name = request.form['name']
     number = request.form['number']
     email = request.form['email']
@@ -76,7 +80,33 @@ def generate():
     work_start3 = request.form['work-start3']
     work_end3 = request.form['work-end3']
     work_description3 = request.form['work-description3']
+    project1_name = request.form['project1-name']
+    project1_description = request.form['project1-description']
+    project2_name = request.form['project2-name']
+    project2_description = request.form['project2-description']
+    project3_name = request.form['project3-name']
+    project3_description = request.form['project3-description']
+    award1 = request.form['award1']
+    award1_year = request.form['award1-year']
+    award2 = request.form['award2']
+    award2_year = request.form['award2-year']
+    award3 = request.form['award3']
+    award3_year = request.form['award3-year']
+    award4 = request.form['award4']
+    award4_year = request.form['award4-year']
+    award5 = request.form['award5']
+    award5_year = request.form['award5-year']
     
+    headshot=request.files['headshot']
+    resume=request.files['resume']
+    project1_picture1=request.files['project1-picture1']
+    project1_picture2=request.files['project1-picture2']
+    project2_picture1=request.files['project2-picture1']
+    project2_picture2=request.files['project2-picture2']
+    project3_picture1=request.files['project3-picture1']
+    project3_picture2=request.files['project3-picture2']
+
+
     # Generate the HTML content for the portfolio
     rendered_content = render_template('portfolio-template.html',
                                    name=name,
@@ -117,14 +147,34 @@ def generate():
                                    name_location3=name_location3,
                                    work_start3=work_start3,
                                    work_end3=work_end3,
-                                   work_description3=work_description3)
-    
-    # Save the generated HTML content to a file
-    file_path = os.path.join('template/portfolio.html')
-    with open(file_path, 'w', encoding="utf-8") as file:
-        file.write(rendered_content)
-    
-    return file_path
+                                   work_description3=work_description3,
+                                   project1_name=project1_name,
+                                   project1_description=project1_description,
+                                   project1_picture1=project1_picture1,
+                                   project1_picture2=project1_picture2,
+                                   project2_name=project2_name,
+                                   project2_description=project2_description,
+                                   project2_picture1=project2_picture1,
+                                   project2_picture2=project2_picture2,
+                                   project3_name=project3_name,
+                                   project3_description=project3_description,
+                                   project3_picture1=project3_picture1,
+                                   project3_picture2=project3_picture2,
+                                   award1=award1,
+                                   award1_year=award1_year,
+                                   award2=award2,
+                                   award2_year=award2_year,
+                                   award3=award3,
+                                   award3_year=award3_year,
+                                   award4=award4,
+                                   award4_year=award4_year,
+                                   award5=award5,
+                                   award5_year=award5_year)
+    # Serve the rendered content as a response
+    response = make_response(rendered_content)
+    response.headers['Content-Type'] = 'text/html'
+
+    return response
 
 if __name__ == '__main__':
     app.run(debug=True)
