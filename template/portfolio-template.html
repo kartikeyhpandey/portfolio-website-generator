@@ -87,7 +87,7 @@
                                 <div class="w3-white w3-text-grey">
                                     <div class="w3-display-container">
                                         <img id="headshot-file"
-                                            src="{{ url_for('static', filename=headshot.filename) }}" style="width:100%"
+                                            src="{{ url_for('static', filename=headshot) }}" style="width:100%"
                                             alt="Photo">
                                     </div>
                                     <div class="w3-container">
@@ -102,7 +102,7 @@
                                         </p>
                                         <p><i class="fa fa-file-text fa-fw w3-margin-right w3-large w3-text-black"></i>
                                             <a id="resume-file" target="_blank"
-                                                href="{{ url_for('static', filename=resume.filename) }}">Resume</a>
+                                                href="{{ url_for('static', filename=resume) }}">Resume</a>
                                     </div>
                                 </div>
                             </div>
@@ -221,34 +221,34 @@
                     <div class="w3-container w3-card w3-white w3-margin-bottom">
                         <div data-aos="fade-up">
                             <div class="w3-container">
-                                <h5 class="w3-opacity"><b>{{ title1 }} / {{ name_location1 }}</b>
+                                <h5 class="w3-opacity"><b>{{ title1 }} / {{ name1_location }}</b>
                                 </h5>
                                 <h6 class="w3-text-black"><i
-                                        class="fa fa-calendar fa-fw w3-margin-right"></i>{{ work_start1 }} -
-                                    {{ work_end1 }}</h6>
-                                <p>{{ work_description1 }}</p>
+                                        class="fa fa-calendar fa-fw w3-margin-right"></i>{{ work1_start }} -
+                                    {{ work1_end }}</h6>
+                                <p>{{ work1_description }}</p>
                                 <hr>
                             </div>
                         </div>
 
                         <div data-aos="fade-up">
                             <div class="w3-container">
-                                <h5 class="w3-opacity"><b>{{ title2 }} / {{ name_location2 }}</b>
+                                <h5 class="w3-opacity"><b>{{ title2 }} / {{ name2_location }}</b>
                                 </h5>
                                 <h6 class="w3-text-black"><i
-                                        class="fa fa-calendar fa-fw w3-margin-right"></i>{{ work_start1 }} -
-                                    {{ work_end1 }}</h6>
-                                <p>{{ work_description2 }}</p>
+                                        class="fa fa-calendar fa-fw w3-margin-right"></i>{{ work2_start }} -
+                                    {{ work2_end }}</h6>
+                                <p>{{ work2_description }}</p>
                                 <hr>
                             </div>
                         </div>
                         <div data-aos="fade-up">
                             <div class="w3-container">
-                                <h5 class="w3-opacity"><b>{{ title3 }} / {{ name_location3 }}</b></h5>
+                                <h5 class="w3-opacity"><b>{{ title3 }} / {{ name3_location }}</b></h5>
                                 <h6 class="w3-text-black"><i
-                                        class="fa fa-calendar fa-fw w3-margin-right"></i>{{ work_start3 }} -
-                                    {{ work_end3 }}</h6>
-                                <p>{{ work_description3 }}</p>
+                                        class="fa fa-calendar fa-fw w3-margin-right"></i>{{ work3_start }} -
+                                    {{ work3_end }}</h6>
+                                <p>{{ work3_description }}</p>
                                 <hr>
                             </div>
                         </div>
@@ -501,15 +501,7 @@
             _PART_INDEX++;
 
             // If full sentence has been displayed then start to delete the sentence after some time
-            if (text === _CONTENT[_PART]) {
-                // Hide the cursor
-                _CURSOR.style.display = 'none';
 
-                clearInterval(_INTERVAL_VAL);
-                setTimeout(function () {
-                    _INTERVAL_VAL = setInterval(Delete, 50);
-                }, 1000);
-            }
         }
 
         // Implements deleting effect

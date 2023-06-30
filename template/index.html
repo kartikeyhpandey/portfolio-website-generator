@@ -94,7 +94,7 @@
                                 </div>
                                 <div class="w3-half">
                                     <p class="field" style="padding-inline: 5px;">
-                                        <label for="resume">Headshot Image:</label>
+                                        <label for="headshot">Headshot Image:</label>
                                         <input type="file" class='w3-input  w3-border' id="headshot" name="headshot"
                                             style="background-color: #ececec;" />
                                     </p>
@@ -133,15 +133,15 @@
                             <div class="w3-row">
                                 <div class="w3-half">
                                     <p class="field" style="padding-inline: 5px;">
-                                        <label for="school-start">Start Year:</label>
-                                        <input class='w3-input  w3-border' type="text" id="school-start"
-                                            name="school-start" required>
+                                        <label for="school_start">Start Year:</label>
+                                        <input class='w3-input  w3-border' type="text" id="school_start"
+                                            name="school_start" required>
                                     </p>
                                 </div>
                                 <div class="w3-half">
                                     <p class="field" style="padding-inline: 5px;">
-                                        <label for="school-end">Graduating Year:</label>
-                                        <input class='w3-input  w3-border' type="text" id="school-end" name="school-end"
+                                        <label for="school_end">Graduating Year:</label>
+                                        <input class='w3-input  w3-border' type="text" id="school_end" name="school_end"
                                             required>
                                     </p>
                                 </div>
@@ -152,391 +152,141 @@
                                     required>
                             </p>
                             <p class="field" style="padding-inline: 5px;">
-                                <label for="school-misc">Miscellaneous Information:</label>
-                                <textarea class='w3-input  w3-border' id="school-misc" name="school-misc"
+                                <label for="school_misc">Miscellaneous Information:</label>
+                                <textarea class='w3-input  w3-border' id="school_misc" name="school_misc"
                                     rows="4"></textarea>
                             </p>
                             <hr>
                             <h3><i class="fa fa-cogs fa-fw w3-margin-right w3-xlarge w3-text-black"></i>Skills</h3>
                             <p>Enter information about your 6 most relevant technical skills.</p>
+
                             <div class="w3-row">
+                                {% for i in range(1, 7) %}
                                 <div class="w3-quarter">
                                     <p class="field" style="padding-inline: 5px;">
-                                        <label for="skill1">Skill Name:</label>
-                                        <input class='w3-input  w3-border' type="text" id="skill1" name="skill1"
-                                            required>
+                                        <label for="skill{{ i }}">Skill Name:</label>
+                                        <input class="w3-input w3-border" type="text" id="skill{{ i }}"
+                                            name="skill{{ i }}" required>
                                     </p>
                                 </div>
                                 <div class="w3-quarter">
                                     <p class="field" style="padding-inline: 5px;">
-                                        <label for="skill1-prof">Proficiency:</label>
-                                        <input type="range" min="1" max="100" value="50" class="w3-input w3-border"
-                                            id="skill1-prof" name="skill1-prof" required
-                                            style="background-color: #ececec;" required>
-                                    </p>
-                                </div>
-                                <div class="w3-quarter">
-                                    <p class="field" style="padding-inline: 5px;">
-                                        <label for="skill2">Skill Name:</label>
-                                        <input class='w3-input  w3-border' type="text" id="skill2" name="skill2"
-                                            required>
-                                    </p>
-                                </div>
-                                <div class="w3-quarter">
-                                    <p class="field" style="padding-inline: 5px;">
-                                        <label for="skill2-prof">Proficiency:</label>
+                                        <label for="skill{{ i }}_prof">Proficiency:</label>
                                         <input type="range" min="1" max="100" value="50"
-                                            class="w3-input w3-border slider" id="skill2-prof" name="skill2-prof"
-                                            required style="background-color: #ececec;" required>
+                                            class="w3-input w3-border slider" id="skill{{ i }}_prof"
+                                            name="skill{{ i }}_prof" required style="background-color: #ececec;">
                                     </p>
                                 </div>
-                                <div class="w3-quarter">
-                                    <p class="field" style="padding-inline: 5px;">
-                                        <label for="skill3">Skill Name:</label>
-                                        <input class='w3-input  w3-border' type="text" id="skill3" name="skill3"
-                                            required>
-                                    </p>
-                                </div>
-                                <div class="w3-quarter">
-                                    <p class="field" style="padding-inline: 5px;">
-                                        <label for="skill3-prof">Proficiency:</label>
-                                        <input type="range" min="1" max="100" value="50"
-                                            class="w3-input w3-border slider" id="skill3-prof" name="skill3-prof"
-                                            required style="background-color: #ececec;" required>
-                                    </p>
-                                </div>
-                                <div class="w3-quarter">
-                                    <p class="field" style="padding-inline: 5px;">
-                                        <label for="skill4">Skill Name:</label>
-                                        <input class='w3-input  w3-border' type="text" id="skill4" name="skill4"
-                                            required>
-                                    </p>
-                                </div>
-                                <div class="w3-quarter">
-                                    <p class="field" style="padding-inline: 5px;">
-                                        <label for="skill4-prof">Proficiency:</label>
-                                        <input type="range" min="1" max="100" value="50"
-                                            class="w3-input w3-border slider" id="skill4-prof" name="skill4-prof"
-                                            required style="background-color: #ececec;" required>
-                                    </p>
-                                </div>
-                                <div class="w3-quarter">
-                                    <p class="field" style="padding-inline: 5px;">
-                                        <label for="skill5">Skill Name:</label>
-                                        <input class='w3-input  w3-border' type="text" id="skill5" name="skill5"
-                                            required>
-                                    </p>
-                                </div>
-                                <div class="w3-quarter">
-                                    <p class="field" style="padding-inline: 5px;">
-                                        <label for="skill5-prof">Proficiency:</label>
-                                        <input type="range" min="1" max="100" value="50"
-                                            class="w3-input w3-border slider" id="skill5-prof" name="skill5-prof"
-                                            required style="background-color: #ececec;" required>
-                                    </p>
-                                </div>
-                                <div class="w3-quarter">
-                                    <p class="field" style="padding-inline: 5px;">
-                                        <label for="skill6">Skill Name:</label>
-                                        <input class='w3-input  w3-border' type="text" id="skill6" name="skill6"
-                                            required>
-                                    </p>
-                                </div>
-                                <div class="w3-quarter">
-                                    <p class="field" style="padding-inline: 5px;">
-                                        <label for="skill6-prof">Proficiency:</label>
-                                        <input type="range" min="1" max="100" value="50"
-                                            class="w3-input w3-border slider" id="skill6-prof" name="skill6-prof"
-                                            required style="background-color: #ececec;" required>
-                                    </p>
-                                </div>
+                                {% endfor %}
                             </div>
                             <hr>
                             <h3><i class="fa fa-briefcase fa-fw w3-margin-right w3-xlarge w3-text-black"></i>Work
                                 Experience</h3>
-                            <p>Enter information about your 3 most relevant work experience.</p>
-                            <div class="w3-row">
-                                <div class="w3-half">
-                                    <p class="field" style="padding-inline: 5px;">
-                                        <label for="title1">Job Title:</label>
-                                        <input class='w3-input  w3-border' type="text" id="title1" name="title1"
-                                            required>
-                                    </p>
-                                </div>
-                                <div class="w3-half">
-                                    <p class="field" style="padding-inline: 5px;">
-                                        <label for="name-location1">Company Name & Location:</label>
-                                        <input class='w3-input  w3-border' type="text" id="name-location1"
-                                            name="name-location1" required>
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="w3-row">
-                                <div class="w3-half">
-                                    <p class="field" style="padding-inline: 5px;">
-                                        <label for="work-start1">Start Month & Year:</label>
-                                        <input class='w3-input  w3-border' type="text" id="work-start1"
-                                            name="work-start1" required>
-                                    </p>
-                                </div>
-                                <div class="w3-half">
-                                    <p class="field" style="padding-inline: 5px;">
-                                        <label for="work-end1">End Month & Year:</label>
-                                        <input class='w3-input  w3-border' type="text" id="work-end1" name="work-end1"
-                                            required>
-                                    </p>
-                                </div>
-                            </div>
-                            <p class="field" style="padding-inline: 5px;"> <label for="work-description1">Job
-                                    Description:</label>
-                                <textarea class='w3-input  w3-border' id="work-description1" name="work-description1"
-                                    rows="4"></textarea>
-                            </p>
+                            <p>Enter information about your 3 most relevant work experiences.</p>
+
+                            {% for i in range(1, 4) %}
                             <hr>
                             <div class="w3-row">
                                 <div class="w3-half">
                                     <p class="field" style="padding-inline: 5px;">
-                                        <label for="title2">Job Title:</label>
-                                        <input class='w3-input  w3-border' type="text" id="title2" name="title2"
-                                            required>
+                                        <label for="title{{ i }}">Job Title:</label>
+                                        <input class="w3-input w3-border" type="text" id="title{{ i }}"
+                                            name="title{{ i }}" required>
                                     </p>
                                 </div>
                                 <div class="w3-half">
                                     <p class="field" style="padding-inline: 5px;">
-                                        <label for="name-location2">Company Name & Location:</label>
-                                        <input class='w3-input  w3-border' type="text" id="name-location2"
-                                            name="name-location2" required>
+                                        <label for="name_location{{ i }}">Company Name & Location:</label>
+                                        <input class="w3-input w3-border" type="text" id="name_location{{ i }}"
+                                            name="name{{ i }}_location" required>
                                     </p>
                                 </div>
                             </div>
                             <div class="w3-row">
                                 <div class="w3-half">
                                     <p class="field" style="padding-inline: 5px;">
-                                        <label for="work-start2">Start Month & Year:</label>
-                                        <input class='w3-input  w3-border' type="text" id="work-start2"
-                                            name="work-start2" required>
+                                        <label for="work_start{{ i }}">Start Month & Year:</label>
+                                        <input class="w3-input w3-border" type="text" id="work_start{{ i }}"
+                                            name="work{{ i }}_start" required>
                                     </p>
                                 </div>
                                 <div class="w3-half">
                                     <p class="field" style="padding-inline: 5px;">
-                                        <label for="work-end2">End Month & Year:</label>
-                                        <input class='w3-input  w3-border' type="text" id="work-end2" name="work-end2"
-                                            required>
+                                        <label for="work_end{{ i }}">End Month & Year:</label>
+                                        <input class="w3-input w3-border" type="text" id="work_end{{ i }}"
+                                            name="work{{ i }}_end" required>
                                     </p>
                                 </div>
                             </div>
-                            <p class="field" style="padding-inline: 5px;"> <label for="work-description2">Job
-                                    Description:</label>
-                                <textarea class='w3-input  w3-border' id="work-description2" name="work-description2"
-                                    rows="4"></textarea>
+                            <p class="field" style="padding-inline: 5px;">
+                                <label for="work_description{{ i }}">Job Description:</label>
+                                <textarea class="w3-input w3-border" id="work_description{{ i }}"
+                                    name="work{{ i }}_description" rows="4"></textarea>
                             </p>
-                            <hr>
-                            <div class="w3-row">
-                                <div class="w3-half">
-                                    <p class="field" style="padding-inline: 5px;">
-                                        <label for="title3">Job Title:</label>
-                                        <input class='w3-input  w3-border' type="text" id="title3" name="title3"
-                                            required>
-                                    </p>
-                                </div>
-                                <div class="w3-half">
-                                    <p class="field" style="padding-inline: 5px;">
-                                        <label for="name-location3">Company Name & Location:</label>
-                                        <input class='w3-input  w3-border' type="text" id="name-location3"
-                                            name="name-location3" required>
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="w3-row">
-                                <div class="w3-half">
-                                    <p class="field" style="padding-inline: 5px;">
-                                        <label for="work-start3">Start Month & Year:</label>
-                                        <input class='w3-input  w3-border' type="text" id="work-start3"
-                                            name="work-start3" required>
-                                    </p>
-                                </div>
-                                <div class="w3-half">
-                                    <p class="field" style="padding-inline: 5px;">
-                                        <label for="work-end3">End Month & Year:</label>
-                                        <input class='w3-input  w3-border' type="text" id="work-end3" name="work-end3"
-                                            required>
-                                    </p>
-                                </div>
-                            </div>
-                            <p class="field" style="padding-inline: 5px;"> <label for="work-description3">Job
-                                    Description:</label>
-                                <textarea class='w3-input  w3-border' id="work-description3" name="work-description3"
-                                    rows="4"></textarea>
-                            </p>
+                            {% endfor %}
+
                             <hr>
                             <h3><i class="fa fa-group fa-fw w3-margin-right w3-xlarge w3-text-black"></i>Project Work
                             </h3>
                             <p>Enter information about your 3 most relevant projects.</p>
-                            <p class="field" style="padding-inline: 5px;">
-                                <label for="project3-name">Project Name</label>
-                                <input class='w3-input  w3-border' type="text" id="project3-name" name="project3-name"
-                                    required>
-                            </p>
-                            <p class="field" style="padding-inline: 5px;"> <label for="project3-description">Project
-                                    Description:</label>
-                                <textarea class='w3-input  w3-border' id="project3-description"
-                                    name="project3-description" rows="4"></textarea>
-                            </p>
-                            <p>Upload two pictures relevant to the project.</p>
-                            <div class="w3-half">
-                                <p class="field" style="padding-inline: 5px;">
-                                    <label for="project3-picture1">Picture 1:</label>
-                                    <input type="file" class='w3-input  w3-border' id="project3-picture1"
-                                        name="project3-picture1" style="background-color: #ececec;" />
-                                </p>
-                            </div>
-                            <div class="w3-half">
-                                <p class="field" style="padding-inline: 5px;">
-                                    <label for="project3-picture2">Picture 2:</label>
-                                    <input type="file" class='w3-input  w3-border' id="project3-picture2"
-                                        name="project3-picture2" style="background-color: #ececec;" />
-                                </p>
-                            </div>
-                            <p class="field" style="padding-inline: 5px;">
-                                <label for="project1-name">Project Name</label>
-                                <input class='w3-input  w3-border' type="text" id="project1-name" name="project1-name"
-                                    required>
-                            </p>
-                            <p class="field" style="padding-inline: 5px;"> <label for="project1-description">Project
-                                    Description:</label>
-                                <textarea class='w3-input  w3-border' id="project1-description"
-                                    name="project1-description" rows="4"></textarea>
-                            </p>
-                            <p>Upload two pictures relevant to the project.</p>
-                            <div class="w3-half">
-                                <p class="field" style="padding-inline: 5px;">
-                                    <label for="project1-picture1">Picture 1:</label>
-                                    <input type="file" class='w3-input  w3-border' id="project1-picture1"
-                                        name="project1-picture1" style="background-color: #ececec;" />
-                                </p>
-                            </div>
-                            <div class="w3-half">
-                                <p class="field" style="padding-inline: 5px;">
-                                    <label for="project1-picture2">Picture 2:</label>
-                                    <input type="file" class='w3-input  w3-border' id="project1-picture2"
-                                        name="project1-picture2" style="background-color: #ececec;" />
-                                </p>
-                            </div>
-                            <p class="field" style="padding-inline: 5px;">
-                                <label for="project2-name">Project Name</label>
-                                <input class='w3-input  w3-border' type="text" id="project2-name" name="project2-name"
-                                    required>
-                            </p>
 
-                            <p class="field" style="padding-inline: 5px;"> <label for="project2-description">Project
-                                    Description:</label>
-                                <textarea class='w3-input  w3-border' id="project2-description"
-                                    name="project2-description" rows="4"></textarea>
+                            {% for i in range(1, 4) %}
+                            <hr>
+                            <p class="field" style="padding-inline: 5px;">
+                                <label for="project{{ i }}_name">Project Name</label>
+                                <input class="w3-input w3-border" type="text" id="project{{ i }}_name"
+                                    name="project{{ i }}_name" required>
+                            </p>
+                            <p class="field" style="padding-inline: 5px;">
+                                <label for="project{{ i }}_description">Project Description:</label>
+                                <textarea class="w3-input w3-border" id="project{{ i }}_description"
+                                    name="project{{ i }}_description" rows="4"></textarea>
                             </p>
                             <p>Upload two pictures relevant to the project.</p>
                             <div class="w3-half">
                                 <p class="field" style="padding-inline: 5px;">
-                                    <label for="project2-picture1">Picture 1:</label>
-                                    <input type="file" class='w3-input  w3-border' id="project2-picture1"
-                                        name="project2-picture1" style="background-color: #ececec;" />
+                                    <label for="project{{ i }}_picture1">Picture 1:</label>
+                                    <input type="file" class="w3-input w3-border" id="project{{ i }}_picture1"
+                                        name="project{{ i }}_picture1" style="background-color: #ececec;" />
                                 </p>
                             </div>
                             <div class="w3-half">
                                 <p class="field" style="padding-inline: 5px;">
-                                    <label for="project2-picture2">Picture 2:</label>
-                                    <input type="file" class='w3-input  w3-border' id="project2-picture2"
-                                        name="project2-picture2" style="background-color: #ececec;" />
+                                    <label for="project{{ i }}_picture2">Picture 2:</label>
+                                    <input type="file" class="w3-input w3-border" id="project{{ i }}_picture2"
+                                        name="project{{ i }}_picture2" style="background-color: #ececec;" />
                                 </p>
                             </div>
+                            {% endfor %}
                             <hr>
                             <h3><i class="fa fa-certificate fa-fw w3-margin-right w3-xlarge w3-text-black"></i>Awards
-                                &amp; Honors
-                            </h3>
+                                &amp; Honors</h3>
                             <p>Enter information about your 5 most relevant awards.</p>
+
+                            {% for i in range(1, 6) %}
                             <div class="w3-row">
                                 <div class="w3-twothird">
                                     <p class="field" style="padding-inline: 5px;">
-                                        <label for="award1">Award Name:</label>
-                                        <input class='w3-input  w3-border' type="text" id="award1" name="award1"
-                                            required>
+                                        <label for="award{{ i }}">Award Name:</label>
+                                        <input class="w3-input w3-border" type="text" id="award{{ i }}"
+                                            name="award{{ i }}" required>
                                     </p>
                                 </div>
                                 <div class="w3-third">
                                     <p class="field" style="padding-inline: 5px;">
-                                        <label for="award1-year">Year:</label>
-                                        <input class='w3-input  w3-border' type="text" id="award1-year"
-                                            name="award1-year" required>
+                                        <label for="award{{ i }}_year">Year:</label>
+                                        <input class="w3-input w3-border" type="text" id="award{{ i }}_year"
+                                            name="award{{ i }}_year" required>
                                     </p>
                                 </div>
                             </div>
-                            <div class="w3-row">
-                                <div class="w3-twothird">
-                                    <p class="field" style="padding-inline: 5px;">
-                                        <label for="award2">Award Name:</label>
-                                        <input class='w3-input  w3-border' type="text" id="award2" name="award2"
-                                            required>
-                                    </p>
-                                </div>
-                                <div class="w3-third">
-                                    <p class="field" style="padding-inline: 5px;">
-                                        <label for="award2-year">Year:</label>
-                                        <input class='w3-input  w3-border' type="text" id="award2-year"
-                                            name="award2-year" required>
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="w3-row">
-                                <div class="w3-twothird">
-                                    <p class="field" style="padding-inline: 5px;">
-                                        <label for="award3">Award Name:</label>
-                                        <input class='w3-input  w3-border' type="text" id="award3" name="award3"
-                                            required>
-                                    </p>
-                                </div>
-                                <div class="w3-third">
-                                    <p class="field" style="padding-inline: 5px;">
-                                        <label for="award3-year">Year:</label>
-                                        <input class='w3-input  w3-border' type="text" id="award3-year"
-                                            name="award3-year" required>
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="w3-row">
-                                <div class="w3-twothird">
-                                    <p class="field" style="padding-inline: 5px;">
-                                        <label for="award4">Award Name:</label>
-                                        <input class='w3-input  w3-border' type="text" id="award4" name="award4"
-                                            required>
-                                    </p>
-                                </div>
-                                <div class="w3-third">
-                                    <p class="field" style="padding-inline: 5px;">
-                                        <label for="award4-year">Year:</label>
-                                        <input class='w3-input  w3-border' type="text" id="award4-year"
-                                            name="award4-year" required>
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="w3-row">
-                                <div class="w3-twothird">
-                                    <p class="field" style="padding-inline: 5px;">
-                                        <label for="award5">Award Name:</label>
-                                        <input class='w3-input  w3-border' type="text" id="award5" name="award5"
-                                            required>
-                                    </p>
-                                </div>
-                                <div class="w3-third">
-                                    <p class="field" style="padding-inline: 5px;">
-                                        <label for="award5-year">Year:</label>
-                                        <input class='w3-input  w3-border' type="text" id="award5-year"
-                                            name="award5-year" required>
-                                    </p>
-                                </div>
-                            </div>
+                            {% endfor %}
+
                             <p class="field" style="padding-inline: 5px;">
-                                <input class='w3-input w3-round-xlarge' style="background-color: #27685b;" type="submit"
+                                <input class="w3-input w3-round-xlarge" style="background-color: #27685b;" type="submit"
                                     value="Generate Portfolio">
                             </p>
+
                         </form>
                     </div>
                 </div>
@@ -593,8 +343,7 @@
             };
             xhr.send(new FormData(form));
 
-            $("#headshot").val('');
-            $("#resume").val('');
+            
 
         });
     </script>
