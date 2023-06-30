@@ -30,8 +30,6 @@ def download():
     # Send the zip file for download
     return send_file(zip_filename, as_attachment=True)
 
-    
-
 @app.route('/generate', methods=['POST'])
 def generate():
     if request.method == 'POST':  
