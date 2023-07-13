@@ -3,7 +3,7 @@
 
 <head>
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
-    <title>{{ name }}</title>
+    <title>{{ name[0] }}</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="static/css/main.css" />
@@ -16,7 +16,7 @@
 
     <!-- Header -->
     <header id="header" class="alt">
-        <div class="logo"><a href="index.html"> {{ name }}</a></div>
+        <div class="logo"><a href="index.html"> {{ name[0] }}</a></div>
         <div class="nav">
             <ul>
                 <li><a href='index.html'>Home</a></li>
@@ -87,7 +87,7 @@
                                 <div class="w3-white w3-text-grey">
                                     <div class="w3-display-container">
                                         <img id="headshot-file"
-                                            src="{{ url_for('static', filename=headshot) }}" style="width:100%"
+                                            src="{{ url_for('static', filename=headshot[0]) }}" style="width:100%"
                                             alt="Photo">
                                     </div>
                                     <div class="w3-container">
@@ -95,10 +95,10 @@
                                                 class="fa fa-user fa-fw w3-margin-right w3-xlarge w3-text-black"></i>Info
                                         </h3>
                                         <p><i
-                                                class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-black"></i>{{ email }}
+                                                class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-black"></i>{{ email[0] }}
                                         </p>
                                         <p><i
-                                                class="fa fa-phone fa-fw w3-margin-right w3-large w3-text-black"></i>{{ number }}
+                                                class="fa fa-phone fa-fw w3-margin-right w3-large w3-text-black"></i>{{ number[0] }}
                                         </p>
                                         <p><i class="fa fa-file-text fa-fw w3-margin-right w3-large w3-text-black"></i>
                                             <a id="resume-file" target="_blank"
@@ -114,21 +114,20 @@
                                             class="fa fa-book fa-fw w3-margin-right w3-xlarge w3-text-black"></i>Summary
                                     </h3>
                                     <div class="w3-container">
-                                        <p>{{ summary }}</p>
-
+                                        <p>{{ summary[0] }}</p>
                                     </div>
                                     <hr>
                                     <h3 class="w3-text-black w3-padding-16"><i
                                             class="fa fa-university fa-fw w3-margin-right w3-xlarge w3-text-black"></i>Education
                                     </h3>
+                                    {% for degree, major, university, school_start, school_end, school_misc in zip(degrees, majors, universities, school_start_years, school_end_years, school_miscs)  %}
                                     <div class="w3-container">
                                         <h5 class="w3-opacity"><b>{{ degree }} in {{ major}} / {{ university }}</b></h5>
                                         <h6 class="w3-text-black"><i
-                                                class="fa fa-calendar fa-fw w3-margin-right"></i>{{ school_start }} -
-                                            {{ school_end }}</h6>
+                                                class="fa fa-calendar fa-fw w3-margin-right"></i>{{ school_start }} - {{ school_end }}</h6>
                                         <p>{{ school_misc }}</p>
                                     </div>
-
+                                    {% endfor %}
                                 </div>
                                 <hr>
                                 <div class="w3-row-padding w3-white w3-text-grey ">
@@ -139,21 +138,21 @@
                                         <div class="w3-grey w3-round-xxlarge w3-small">
                                             <div id="skill1" class="w3-container w3-center w3-round-xxlarge w3-black"
                                                 style="width: 20%">
-                                                <p class="" style="font-size: 1rem ;margin: 0 0 0 0">{{ skill1 }}</p>
+                                                <p class="" style="font-size: 1rem ;margin: 0 0 0 0">{{ skill1[0] }}</p>
                                             </div>
                                         </div>
                                         <br>
                                         <div class="w3-grey w3-round-xxlarge w3-small">
                                             <div id="skill2" class="w3-container w3-center w3-round-xlarge w3-black"
                                                 style="width:95%">
-                                                <p class="" style="font-size: 1rem ;margin: 0 0 0 0"> {{ skill2 }}</p>
+                                                <p class="" style="font-size: 1rem ;margin: 0 0 0 0"> {{ skill2[0] }}</p>
                                             </div>
                                         </div>
                                         <br>
                                         <div class="w3-grey w3-round-xlarge w3-small">
                                             <div id="skill3" class="w3-container w3-center w3-round-xlarge w3-black"
                                                 style="width:95%">
-                                                <p class="" style="font-size: 1rem ;margin: 0 0 0 0">{{ skill3 }}</p>
+                                                <p class="" style="font-size: 1rem ;margin: 0 0 0 0">{{ skill3[0] }}</p>
                                             </div>
                                         </div>
                                         <br>
@@ -162,14 +161,14 @@
                                         <div class="w3-grey w3-round-xlarge w3-small">
                                             <div id="skill4" class="w3-container w3-center w3-round-xlarge w3-black"
                                                 style="width:90%">
-                                                <p class="" style="font-size: 1rem ;margin: 0 0 0 0">{{ skill4 }}</p>
+                                                <p class="" style="font-size: 1rem ;margin: 0 0 0 0">{{ skill4[0] }}</p>
                                             </div>
                                         </div>
                                         <br>
                                         <div class="w3-grey w3-round-xlarge w3-small">
                                             <div id="skill5" class="w3-container w3-center w3-round-xlarge w3-black"
                                                 style="width:90%">
-                                                <p class="" style="font-size: 1rem ;margin: 0 0 0 0">{{ skill5 }}</p>
+                                                <p class="" style="font-size: 1rem ;margin: 0 0 0 0">{{ skill5[0] }}</p>
                                             </div>
                                         </div>
 
@@ -177,7 +176,7 @@
                                         <div class="w3-grey w3-round-xlarge w3-small">
                                             <div id="skill6" class="w3-container w3-center w3-round-xlarge w3-black"
                                                 style="width:95%">
-                                                <p class="" style="font-size: 1rem ;margin: 0 0 0 0">{{ skill6 }}</p>
+                                                <p class="" style="font-size: 1rem ;margin: 0 0 0 0">{{ skill6[0] }}</p>
                                             </div>
                                         </div>
 
@@ -196,7 +195,6 @@
         </section>
     </a>
 
-
     <section id="work-experience" class="banner half">
         <article>
             <img src="static/images/portfolio/slide03.jpg" alt="" />
@@ -212,46 +210,26 @@
         </article>
     </section>
 
-
     <!-- Two -->
     <section class="wrapper style2" style="background-color: #13221f;">
         <div class="inner">
             <div class="content">
                 <div class="w3">
                     <div class="w3-container w3-card w3-white w3-margin-bottom">
+                        {% for position, company, start_year, end_year, description in zip(positions, companies, work_start_years, work_end_years, work_descriptions) %}
                         <div data-aos="fade-up">
+                            
                             <div class="w3-container">
-                                <h5 class="w3-opacity"><b>{{ title1 }} / {{ name1_location }}</b>
+                                <h5 class="w3-opacity"><b>{{ position }} / {{ company }}</b>
                                 </h5>
                                 <h6 class="w3-text-black"><i
-                                        class="fa fa-calendar fa-fw w3-margin-right"></i>{{ work1_start }} -
-                                    {{ work1_end }}</h6>
-                                <p>{{ work1_description }}</p>
+                                        class="fa fa-calendar fa-fw w3-margin-right"></i>{{ start_year }} - {{ end_year }}</h6>
+                                <p>{{ description }}</p>
                                 <hr>
                             </div>
-                        </div>
-
-                        <div data-aos="fade-up">
-                            <div class="w3-container">
-                                <h5 class="w3-opacity"><b>{{ title2 }} / {{ name2_location }}</b>
-                                </h5>
-                                <h6 class="w3-text-black"><i
-                                        class="fa fa-calendar fa-fw w3-margin-right"></i>{{ work2_start }} -
-                                    {{ work2_end }}</h6>
-                                <p>{{ work2_description }}</p>
-                                <hr>
-                            </div>
-                        </div>
-                        <div data-aos="fade-up">
-                            <div class="w3-container">
-                                <h5 class="w3-opacity"><b>{{ title3 }} / {{ name3_location }}</b></h5>
-                                <h6 class="w3-text-black"><i
-                                        class="fa fa-calendar fa-fw w3-margin-right"></i>{{ work3_start }} -
-                                    {{ work3_end }}</h6>
-                                <p>{{ work3_description }}</p>
-                                <hr>
-                            </div>
-                        </div>
+                             
+                        </div> 
+                        {% endfor %}                
                     </div>
 
                 </div>
@@ -285,62 +263,27 @@
 
                 <div class="w3">
                     <div class="w3-container w3-card w3-white w3-margin-bottom">
-
+                        {% for project_name, description, picture1, picture2 in zip(project_names, project_descriptions, project_picture1s, project_picture2s) %}
                         <div data-aos="fade-up">
                             <div class="w3-container">
                                 <header>
-                                    <h4>{{ project1_name }}</h4>
+                                    <h4>{{ project_name }}</h4>
                                 </header>
-                                <p>{{ project1_description }}</p>
+                                <p>{{ description }}</p>
                                 <h5 class="w3-opcaity">Pictures </h5>
                                 <div class="w3-row w3-center">
                                     <div class="w3-col s2 w3-center">
-                                        <img src="{{ url_for('static', filename=project1_picture1) }}" width=90%>
+                                        <img src="{{ url_for('static', filename=picture1) }}" width=90%>
                                     </div>
                                     <div class="w3-col s2 w3-center">
-                                        <img src="{{ url_for('static', filename=project1_picture1) }}" width=90%>
+                                        <img src="{{ url_for('static', filename=picture2) }}" width=90%>
                                     </div>
                                 </div>
                                 <hr>
                             </div>
                         </div>
-                        <div data-aos="fade-up">
-                            <div class="w3-container">
-                                <header>
-                                    <h4>{{ project2_name }}</h4>
-                                </header>
-                                <p>{{ project2_description }}</p>
-                                <h5 class="w3-opcaity">Pictures </h5>
-                                <div class="w3-row w3-center">
-                                    <div class="w3-col s2 w3-center">
-                                        <img src="{{ url_for('static', filename=project2_picture1) }}" width=90%>
-                                    </div>
-                                    <div class="w3-col s2 w3-center">
-                                        <img src="{{ url_for('static', filename=project2_picture2) }}" width=90%>
-                                    </div>
-                                </div>
-                                <hr>
-                            </div>
-                        </div>
-                        <div data-aos="fade-up">
-                            <div class="w3-container">
-                                <header>
-                                    <h4>{{ project3_name }}</h4>
-                                </header>
-                                <p>{{ project3_description }}</p>
-                                <h5 class="w3-opcaity">Pictures </h5>
-                                <div class="w3-row w3-center">
-                                    <div class="w3-col s2 w3-center">
-                                        <img src="{{ url_for('static', filename=project3_picture1) }}" width=90%>
-                                    </div>
-                                    <div class="w3-col s2 w3-center">
-                                        <img src="{{ url_for('static', filename=project3_picture2) }}" width=90%>
-                                    </div>
-                                </div>
-                                <hr>
-                            </div>
-                        </div>
-                        <br>
+                        {% endfor %}
+                        <hr>
                     </div>
 
                 </div>
@@ -389,26 +332,12 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    {% for award, award_year in zip(awards, award_years) %}
                                     <tr>
-                                        <td>{{ award1 }}</td>
-                                        <td>{{ award1_year }}</td>
+                                        <td>{{ award }}</td>
+                                        <td>{{ award_year }}</td>
                                     </tr>
-                                    <tr>
-                                        <td>{{ award2 }}</td>
-                                        <td>{{ award2_year }}</td>
-                                    </tr>
-                                    <tr>
-                                        <td>{{ award3 }}</td>
-                                        <td>{{ award3_year }}</td>
-                                    </tr>
-                                    <tr>
-                                        <td>{{ award4 }}</td>
-                                        <td>{{ award4_year }}</td>
-                                    </tr>
-                                    <tr>
-                                        <td>{{ award5 }}</td>
-                                        <td>{{ award5_year }}</td>
-                                    </tr>
+                                    {% endfor %}
                                 </tbody>
                             </table>
                         </div>
@@ -428,41 +357,31 @@
         <div class="inner">
             <div class="content">
                 <section>
-                    <h4>{{ name }}</h4>
-                    <p>{{ major}} {{ school_end }}
-                        <br>{{ university }}
+                    <h4>{{ name[0] }}</h4>
+                    <p>{{ majors[0]}}
+                        <br>{{ universities[0] }}
                     </p>
                 </section>
                 <section>
                     <h4>Contact</h4>
-                    <p>{{ email }}
-                        <br>{{ number }}
+                    <p>{{ email[0] }}
+                        <br>{{ number[0] }}
                     </p>
-                </section>
-                <section>
-                    <h4>Follow Me</h4>
-                    <ul>
-
-                        <li><a href="https://www.linkedin.com/in/kartikeyhpandey/"><i
-                                    class="icon fa-linkedin">&nbsp;</i>Linkedin</a></li>
-                        <li><a href="https://github.com/kartikeyhpandey/"><i class="icon fa-github">&nbsp;</i>Github</a>
-                        </li>
-                    </ul>
-                </section>
+                </section>               
             </div>
-            <div class="copyright"> © {{ name }}. All rights reserved.</div>
+            <div class="copyright"> © {{ name[0] }}. All rights reserved.</div>
         </div>
     </footer>
 
 
     <!-- Scripts -->
     <script>
-        document.getElementById('skill1').style.width = '{{ skill1_prof }}%';
-        document.getElementById('skill2').style.width = '{{ skill2_prof }}%';
-        document.getElementById('skill3').style.width = '{{ skill3_prof }}%';
-        document.getElementById('skill4').style.width = '{{ skill4_prof }}%';
-        document.getElementById('skill5').style.width = '{{ skill5_prof }}%';
-        document.getElementById('skill6').style.width = '{{ skill6_prof }}%';
+        document.getElementById('skill1').style.width = '{{ skill1_prof[0] }}%';
+        document.getElementById('skill2').style.width = '{{ skill2_prof[0] }}%';
+        document.getElementById('skill3').style.width = '{{ skill3_prof[0] }}%';
+        document.getElementById('skill4').style.width = '{{ skill4_prof[0] }}%';
+        document.getElementById('skill5').style.width = '{{ skill5_prof[0] }}%';
+        document.getElementById('skill6').style.width = '{{ skill6_prof[0] }}%';
     </script>
     <script src="static/js/jquery.min.js"></script>
     <script src="static/js/jquery.scrollex.min.js"></script>
@@ -475,7 +394,7 @@
     </script>
     <script type="text/javascript">
         var _CONTENT = [
-            "{{ name }}"
+            "{{ name[0] }}"
         ];
 
         // Current sentence being processed
