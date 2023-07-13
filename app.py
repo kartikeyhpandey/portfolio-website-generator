@@ -1,5 +1,5 @@
 import zipfile
-from flask import Flask, render_template, send_file, request, make_response
+from flask import Flask, render_template, send_file, request
 import os
 
 app = Flask(__name__, template_folder='template')
@@ -34,18 +34,24 @@ def download():
 @app.route('/generate', methods=['POST'])
 def generate():
     if request.method == 'POST':
-        config = request.form.to_dict()
-        for file_field in request.files:
+        config = request.form.to_dict(flat=False)
+        print(request.files.to_dict(flat=False))
+        for file_field in request.files.to_dict(flat=False):
             print(file_field)
-            file = request.files[file_field]
-            if file and allowed_file(file.filename):
-                filename = file.filename
-                file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-                config[file_field] = filename
+            files = request.files.to_dict(flat=False)[file_field]
+            print(files)
+            for file in files:
+                if file and allowed_file(file.filename):
+                    filename = file.filename
+                    file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+                    if file_field in config:
+                        config[file_field].append(filename)
+                    else:
+                        config[file_field] = [filename]
     print(config)
     # Generate the HTML content for the portfolio
     rendered_content = render_template('portfolio-template.html',
-                                   **config, )
+                                   **config, zip=zip)
     
     # Save the generated HTML content to a file
     file_path = os.path.join('template/portfolio.html')

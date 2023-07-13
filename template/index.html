@@ -107,51 +107,58 @@
                                 <label for="summary">Summary:</label>
                                 <textarea class='w3-input w3-border' id="summary" name="summary" rows="4"></textarea>
                             </p>
-                            <hr>
+
                             <h3><i class="fa fa-university fa-fw w3-margin-right w3-xlarge w3-text-black"></i>Education
                             </h3>
-                            <p>Enter information about your most recent education.</p>
-                            <div class="w3-row">
-                                <div class="w3-half">
-                                    <p class="field" style="padding-inline: 5px;">
-                                        <label for="degree">Degree:</label>
-                                        <input class='w3-input w3-border' type="text" id="degree" name="degree"
-                                            required>
-                                    </p>
-                                </div>
-                                <div class="w3-half">
-                                    <p class="field" style="padding-inline: 5px;">
-                                        <label for="major">Major:</label>
-                                        <input class='w3-input w3-border' type="text" id="major" name="major" required>
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="w3-row">
-                                <div class="w3-half">
-                                    <p class="field" style="padding-inline: 5px;">
-                                        <label for="school_start">Start Year:</label>
-                                        <input class='w3-input w3-border' type="text" id="school_start"
-                                            name="school_start" required>
-                                    </p>
-                                </div>
-                                <div class="w3-half">
-                                    <p class="field" style="padding-inline: 5px;">
-                                        <label for="school_end">Graduating Year:</label>
-                                        <input class='w3-input w3-border' type="text" id="school_end" name="school_end"
-                                            required>
-                                    </p>
-                                </div>
-                            </div>
-                            <p class="field" style="padding-inline: 5px;">
-                                <label for="university">University Name:</label>
-                                <input class='w3-input w3-border' type="text" id="university" name="university"
-                                    required>
+                            <p>Enter information about your most recent education.
+                                <button type="button" onclick="addEducationField()" style="padding: 0;">
+                                    <i class="fa fa-plus-square" style="color: #0b7e06;"></i>
+                                </button>
                             </p>
-                            <p class="field" style="padding-inline: 5px;">
-                                <label for="school_misc">Miscellaneous Information:</label>
-                                <textarea class='w3-input w3-border' id="school_misc" name="school_misc"
-                                    rows="2"></textarea>
-                            </p>
+                            <div id="education-container">
+                                <div class="w3-row">
+                                    <div class="w3-half">
+                                        <p class="field" style="padding-inline: 5px;">
+                                            <label for="degree">Degree:</label>
+                                            <input class='w3-input w3-border' type="text" id="degree" name="degrees"
+                                                required>
+                                        </p>
+                                    </div>
+                                    <div class="w3-half">
+                                        <p class="field" style="padding-inline: 5px;">
+                                            <label for="major">Major:</label>
+                                            <input class='w3-input w3-border' type="text" id="major" name="majors"
+                                                required>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="w3-row">
+                                    <div class="w3-half">
+                                        <p class="field" style="padding-inline: 5px;">
+                                            <label for="school_start">Start Year:</label>
+                                            <input class='w3-input w3-border' type="text" id="school_start"
+                                                name="school_start_years" required>
+                                        </p>
+                                    </div>
+                                    <div class="w3-half">
+                                        <p class="field" style="padding-inline: 5px;">
+                                            <label for="school_end">Graduating Year:</label>
+                                            <input class='w3-input w3-border' type="text" id="school_end"
+                                                name="school_end_years" required>
+                                        </p>
+                                    </div>
+                                </div>
+                                <p class="field" style="padding-inline: 5px;">
+                                    <label for="university">University Name:</label>
+                                    <input class='w3-input w3-border' type="text" id="university" name="universities"
+                                        required>
+                                </p>
+                                <p class="field" style="padding-inline: 5px;">
+                                    <label for="school_misc">Miscellaneous Information:</label>
+                                    <textarea class='w3-input w3-border' id="school_misc" name="school_miscs" rows="2"
+                                        required></textarea>
+                                </p>
+                            </div>
                             <hr>
                             <h3><i class="fa fa-cogs fa-fw w3-margin-right w3-xlarge w3-text-black"></i>Skills</h3>
                             <p>Enter information about your 6 most relevant technical skills.</p>
@@ -183,7 +190,43 @@
                                     <i class="fa fa-plus-square" style="color: #0b7e06;"></i>
                                 </button>
                             </p>
-                            <div id="work-experience-container"></div>                           
+                            <div id="work-experience-container">
+                                <div class="w3-row">
+                                    <div class="w3-half">
+                                        <p class="field" style="padding-inline: 5px;">
+                                            <label for="company">Company:</label>
+                                            <input class='w3-input w3-border' type="text" name="companies" required>
+                                        </p>
+                                    </div>
+                                    <div class="w3-half">
+                                        <p class="field" style="padding-inline: 5px;">
+                                            <label for="position">Position:</label>
+                                            <input class='w3-input w3-border' type="text" name="positions" required>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="w3-row">
+                                    <div class="w3-half">
+                                        <p class="field" style="padding-inline: 5px;">
+                                            <label for="work_start">Start Year:</label>
+                                            <input class='w3-input w3-border' type="text" name="work_start_years"
+                                                required>
+                                        </p>
+                                    </div>
+                                    <div class="w3-half">
+                                        <p class="field" style="padding-inline: 5px;">
+                                            <label for="work_end">End Year:</label>
+                                            <input class='w3-input w3-border' type="text" name="work_end_years"
+                                                required>
+                                        </p>
+                                    </div>
+                                </div>
+                                <p class="field" style="padding-inline: 5px;">
+                                    <label for="work_description">Work Description:</label>
+                                    <textarea class='w3-input w3-border' name="work_descriptions" required
+                                        rows="4"></textarea>
+                                </p>
+                            </div>
                             <hr>
                             <h3><i class="fa fa-archive fa-fw w3-margin-right w3-xlarge w3-text-black"></i>Project Work
                             </h3>
@@ -192,7 +235,33 @@
                                     <i class="fa fa-plus-square" style="color: #0b7e06;"></i>
                                 </button>
                             </p>
-                            <div id="project-container"></div>
+                            <div id="project-container">
+                                <p class="field" style="padding-inline: 5px;">
+                                    <label for="project_name">Project Name</label>
+                                    <input class="w3-input w3-border" type="text" name="project_names" required>
+                                </p>
+                                <p class="field" style="padding-inline: 5px;">
+                                    <label for="project_description">Project Description:</label>
+                                    <textarea class="w3-input w3-border" name="project_descriptions" required
+                                        rows="4"></textarea>
+                                </p>
+                                <p>Upload two pictures relevant to the project.</p>
+                                <div class="w3-half">
+                                    <p class="field" style="padding-inline: 5px;">
+                                        <label for="project_picture1">Picture 1:</label>
+                                        <input type="file" class="w3-input w3-border" name="project_picture1s"
+                                            style="background-color: #ececec;" />
+                                    </p>
+                                </div>
+                                <div class="w3-half">
+                                    <p class="field" style="padding-inline: 5px;">
+                                        <label for="project_picture2">Picture 2:</label>
+                                        <input type="file" class="w3-input w3-border" name="project_picture2s"
+                                            style="background-color: #ececec;" />
+                                    </p>
+                                </div>
+                                <hr>
+                            </div>
 
                             <hr>
                             <h3><i class="fa fa-trophy fa-fw w3-margin-right w3-xlarge w3-text-black"></i>Awards &amp;
@@ -202,7 +271,21 @@
                                     <i class="fa fa-plus-square" style="color: #0b7e06;"></i>
                                 </button>
                             </p>
-                            <div id="awards-container"></div>
+                            <div id="awards-container">
+                                <div class="w3-twothird">
+                                    <p class="field" style="padding-inline: 5px;">
+                                        <label for="awards">Award Name: </label>
+                                        <input class="w3-input w3-border" type="text" name="awards" required>
+                                    </p>
+                                </div>
+                                <div class="w3-third">
+                                    <p class="field" style="padding-inline: 5px;">
+                                        <label for="award_year">Year:</label>
+                                        <input class="w3-input w3-border" type="text" name="award_years" required>
+                                    </p>
+                                </div>
+                                <hr>
+                            </div>
                             <hr>
                             <button class="w3-button w3-block w3-section w3-teal w3-ripple w3-padding">Generate</button>
                         </form>
@@ -241,6 +324,65 @@
     <!-- Scripts -->
     <script src="static/js/jquery.min.js"></script>
     <script>
+        function addEducationField() {
+            var container = document.getElementById("education-container");
+            var educationField = document.createElement("div");
+            educationField.innerHTML = `
+                <div class="w3-row">
+                    <div class="w3-half">
+                        <p class="field" style="padding-inline: 5px;">
+                            <label for="degree">Degree:
+                                <button type="button" onclick="removeEducationField(this)"
+                                                    style="padding: 0;height: 0;">
+                                                    <i class="fa fa-minus-square" style="color: #870808;"></i>
+                                </button>
+                            </label>
+                            <input class='w3-input w3-border' type="text" id="degree" name="degrees"
+                                required>
+                        </p>
+                    </div>
+                    <div class="w3-half">
+                        <p class="field" style="padding-inline: 5px;">
+                            <label for="major">Major:</label>
+                            <input class='w3-input w3-border' type="text" id="major" name="majors" required>
+                        </p>
+                    </div>
+                </div>
+                <div class="w3-row">
+                    <div class="w3-half">
+                        <p class="field" style="padding-inline: 5px;">
+                            <label for="school_start">Start Year:</label>
+                            <input class='w3-input w3-border' type="text" id="school_start"
+                                name="school_start_years" required>
+                        </p>
+                    </div>
+                    <div class="w3-half">
+                        <p class="field" style="padding-inline: 5px;">
+                            <label for="school_end">Graduating Year:</label>
+                            <input class='w3-input w3-border' type="text" id="school_end" name="school_end_years"
+                                required>
+                        </p>
+                    </div>
+                </div>
+                <p class="field" style="padding-inline: 5px;">
+                    <label for="university">University Name:</label>
+                    <input class='w3-input w3-border' type="text" id="university" name="universities"
+                        required>
+                </p>
+                <p class="field" style="padding-inline: 5px;">
+                    <label for="school_misc">Miscellaneous Information:</label>
+                    <textarea class='w3-input w3-border' id="school_misc" name="school_miscs"
+                        rows="2" required></textarea>
+                </p>       
+            `;
+            container.appendChild(educationField);
+        }
+
+        function removeEducationField(button) {
+            var fieldContainer = button.parentNode.parentNode.parentNode.parentNode.parentNode;
+            fieldContainer.parentNode.removeChild(fieldContainer);
+        }
+
         function addWorkExperienceField() {
             var container = document.getElementById("work-experience-container");
             var workExperienceField = document.createElement("div");
@@ -253,13 +395,13 @@
                                     <i class="fa fa-minus-square" style="color: #870808;"></i>
                                 </button>    
                             </label>
-                            <input class='w3-input w3-border' type="text" name="company[]" required>
+                            <input class='w3-input w3-border' type="text" name="companies" required>
                         </p>
                     </div>
                     <div class="w3-half">
                         <p class="field" style="padding-inline: 5px;">
                             <label for="position">Position:</label>
-                            <input class='w3-input w3-border' type="text" name="position[]" required>
+                            <input class='w3-input w3-border' type="text" name="positions" required>
                         </p>
                     </div>
                 </div>
@@ -267,25 +409,25 @@
                     <div class="w3-half">
                         <p class="field" style="padding-inline: 5px;">
                             <label for="work_start">Start Year:</label>
-                            <input class='w3-input w3-border' type="text" name="work_start[]" required>
+                            <input class='w3-input w3-border' type="text" name="work_start_years" required>
                         </p>
                     </div>
                     <div class="w3-half">
                         <p class="field" style="padding-inline: 5px;">
                             <label for="work_end">End Year:</label>
-                            <input class='w3-input w3-border' type="text" name="work_end[]" required>
+                            <input class='w3-input w3-border' type="text" name="work_end_years" required>
                         </p>
                     </div>
                 </div>
                 <p class="field" style="padding-inline: 5px;">
                     <label for="work_description">Work Description:</label>
-                    <textarea class='w3-input w3-border' name="work_description[]" rows="4"></textarea>
+                    <textarea class='w3-input w3-border' name="work_descriptions" required rows="4"></textarea>
                 </p>         
             `;
             container.appendChild(workExperienceField);
         }
 
-        function removeWorkField(button){
+        function removeWorkField(button) {
             var fieldContainer = button.parentNode.parentNode.parentNode.parentNode.parentNode;
             fieldContainer.parentNode.removeChild(fieldContainer);
         }
@@ -300,30 +442,31 @@
                                 <i class="fa fa-minus-square" style="color: #870808;"></i>
                         </button>
                     </label>
-                    <input class="w3-input w3-border" type="text" name="project_name[]" required>
+                    <input class="w3-input w3-border" type="text" name="project_names" required>
                 </p>
                 <p class="field" style="padding-inline: 5px;">
                     <label for="project_description">Project Description:</label>
-                    <textarea class="w3-input w3-border" name="project_description[]" rows="4"></textarea>
+                    <textarea class="w3-input w3-border" name="project_descriptions"  required rows="4"></textarea>
                 </p>
                 <p>Upload two pictures relevant to the project.</p>
                 <div class="w3-half">
                     <p class="field" style="padding-inline: 5px;">
                         <label for="project_picture1">Picture 1:</label>
-                        <input type="file" class="w3-input w3-border" name="project_picture1[]" style="background-color: #ececec;" />
+                        <input type="file" class="w3-input w3-border" name="project_picture1s" style="background-color: #ececec;" />
                     </p>
                 </div>
                 <div class="w3-half">
                     <p class="field" style="padding-inline: 5px;">
                         <label for="project_picture2">Picture 2:</label>
-                        <input type="file" class="w3-input w3-border" name="project_picture2[]" style="background-color: #ececec;" />
+                        <input type="file" class="w3-input w3-border" name="project_picture2s" style="background-color: #ececec;" />
                     </p>
                 </div>
                 <hr>
             `;
             container.appendChild(projectField);
         }
-        function removeProjectField(button){
+
+        function removeProjectField(button) {
             var fieldContainer = button.parentNode.parentNode.parentNode;
             fieldContainer.parentNode.removeChild(fieldContainer);
         }
@@ -339,13 +482,13 @@
                                 <i class="fa fa-minus-square" style="color: #870808;"></i>
                             </button>
                         </label>
-                        <input class="w3-input w3-border" type="text" name="awards[]" required>
+                        <input class="w3-input w3-border" type="text" name="awards" required>
                     </p>
                 </div>
                 <div class="w3-third">
                     <p class="field" style="padding-inline: 5px;">
                         <label for="award_year">Year:</label>
-                        <input class="w3-input w3-border" type="text" name="award_year[]" required>
+                        <input class="w3-input w3-border" type="text" name="award_years" required>
                     </p>
                 </div>
                 <hr>
@@ -353,7 +496,7 @@
             container.appendChild(awardField);
         }
 
-        function removeAwardField(button){
+        function removeAwardField(button) {
             var fieldContainer = button.parentNode.parentNode.parentNode.parentNode;
             fieldContainer.parentNode.removeChild(fieldContainer);
         }
